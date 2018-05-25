@@ -53,3 +53,6 @@ source 'https://rubygems.org'
 
 # Use Bootstrap to additional styling on blocipedia
   gem 'bootstrap-sass'
+
+# Use Devise for user authentication
+  gem 'devise'
