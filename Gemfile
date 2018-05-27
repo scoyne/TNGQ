@@ -56,3 +56,6 @@ source 'https://rubygems.org'
 
 # Use Devise for user authentication
   gem 'devise'
+
+# Use Pundit for user authorization
+  gem 'pundit'

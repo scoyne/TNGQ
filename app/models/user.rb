@@ -1,12 +1,18 @@
 class User < ApplicationRecord
+  has_many :wikis, dependent: :destroy
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  has_many :wikis, dependent: :destroy
+  
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  protected
-  def confirmation_required?
-    false
+  before_save { self.email = email.downcase }
+  before_save { self.role ||= :standard }
+
+  enum role: [:standard, :premium, :admin]
+  after_initialize :set_initial_role
+
+  def set_initial_role
+    self.role ||= :standard
   end
 end
