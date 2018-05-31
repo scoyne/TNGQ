@@ -2,12 +2,12 @@ class WikiPolicy < ApplicationPolicy
     attr_reader :user, :wiki
     
     def initialize(user, wiki)
-        @user = user
-        @wiki = wiki
+        super(user, wiki)
+        @wiki = record
     end
 
     def update?
-        @user.present? || @user.admin?
+        user.admin? || wiki.try(:user) == user
     end
 
     def destroy?

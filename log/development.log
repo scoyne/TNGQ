@@ -7229,3 +7229,308 @@ Processing by WikisController#show as HTML
 Completed 200 OK in 56ms (Views: 49.3ms | ActiveRecord: 0.5ms)
 
 
+Started GET "/wikis/15/edit" for 127.0.0.1 at 2018-05-30 22:25:16 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mWiki Load (2.5ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/edit.html.erb within layouts/application (22.9ms)
+Completed 200 OK in 463ms (Views: 383.5ms | ActiveRecord: 5.7ms)
+
+
+Started PATCH "/wikis/15" for 127.0.0.1 at 2018-05-30 22:25:35 -0400
+Processing by WikisController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tF59eg5x799yOTtyjVnttYWEiCMdWhyf/UArjJ9bsiau07BtKPYb3cQU7dNxmkXFJDM5aeIJ+pcwGOWrOiGRJQ==", "wiki"=>{"title"=>"This is Joe's Wiki", "body"=>"This is Joe's wiki\r\n\r\nThis is Tara's edit\r\nThis is Tara's second edit\r\nThis is Tara's third edit\r\nThis is Tara's forth edit\r\nThis is Tara's fifth edit"}, "commit"=>"Save", "id"=>"15"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.1ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "wikis" SET "body" = ?, "updated_at" = ? WHERE "wikis"."id" = ?[0m  [["body", "This is Joe's wiki\r\n\r\nThis is Tara's edit\r\nThis is Tara's second edit\r\nThis is Tara's third edit\r\nThis is Tara's forth edit\r\nThis is Tara's fifth edit"], ["updated_at", "2018-05-31 02:25:35.518178"], ["id", 15]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/wikis/15
+Completed 302 Found in 30ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/wikis/15" for 127.0.0.1 at 2018-05-30 22:25:35 -0400
+Processing by WikisController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.2ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering wikis/show.html.erb within layouts/application
+  Rendered wikis/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 53ms (Views: 45.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/wikis" for 127.0.0.1 at 2018-05-30 22:25:40 -0400
+Processing by WikisController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering wikis/index.html.erb within layouts/application
+  [1m[36mWiki Load (0.4ms)[0m  [1m[34mSELECT "wikis".* FROM "wikis"[0m
+  Rendered wikis/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 79ms (Views: 72.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/wikis/19" for 127.0.0.1 at 2018-05-30 22:25:43 -0400
+Processing by WikisController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.1ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  Rendering wikis/show.html.erb within layouts/application
+  Rendered wikis/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 68ms (Views: 62.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/wikis/19/edit" for 127.0.0.1 at 2018-05-30 22:25:45 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.2ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/edit.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 70ms (Views: 60.3ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/wikis/19" for 127.0.0.1 at 2018-05-30 22:25:55 -0400
+Processing by WikisController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hDOQo9VVoTUg6ko634FG48QdmIn6k6gLzsRi4CgoJ2VwWazDu5hGpQzTxOwzGXuortxSIJK/XUgTzvYTxHBT2g==", "wiki"=>{"title"=>"This is Tara's Wiki", "body"=>"This is Tara's Wiki\r\n\r\nThis is the first edit"}, "commit"=>"Save", "id"=>"19"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.2ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "wikis" SET "body" = ?, "updated_at" = ? WHERE "wikis"."id" = ?[0m  [["body", "This is Tara's Wiki\r\n\r\nThis is the first edit"], ["updated_at", "2018-05-31 02:25:55.206638"], ["id", 19]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/wikis/19
+Completed 302 Found in 11ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/wikis/19" for 127.0.0.1 at 2018-05-30 22:25:55 -0400
+Processing by WikisController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.2ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  Rendering wikis/show.html.erb within layouts/application
+  Rendered wikis/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 59ms (Views: 52.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/wikis" for 127.0.0.1 at 2018-05-30 22:28:20 -0400
+Processing by WikisController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering wikis/index.html.erb within layouts/application
+  [1m[36mWiki Load (0.3ms)[0m  [1m[34mSELECT "wikis".* FROM "wikis"[0m
+  Rendered wikis/index.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 107ms (Views: 69.9ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/wikis/15" for 127.0.0.1 at 2018-05-30 22:28:22 -0400
+Processing by WikisController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.4ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering wikis/show.html.erb within layouts/application
+  Rendered wikis/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 67ms (Views: 60.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/wikis/15/edit" for 127.0.0.1 at 2018-05-30 22:28:25 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.2ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/edit.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 117ms (Views: 109.0ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/wikis/15" for 127.0.0.1 at 2018-05-30 22:28:38 -0400
+Processing by WikisController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Blb4CRYHWdzFUxNub4ttnTKKi6OiAkXsAAWiPfzbML4c2zUeMICt3nN+xc+TSMXtkz066V1Ro+TNXWwaWaETvQ==", "wiki"=>{"title"=>"This is Joe's Wiki", "body"=>"This is Joe's wiki\r\n\r\nThis is Tara's edit\r\nThis is Tara's second edit\r\nThis is Tara's third edit\r\nThis is Tara's forth edit\r\nThis is Tara's fifth edit\r\nThis is the last attempt"}, "commit"=>"Save", "id"=>"15"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.4ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+Redirected to http://localhost:3000/wikis/15/edit
+Completed 302 Found in 13ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/wikis/15/edit" for 127.0.0.1 at 2018-05-30 22:28:38 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mWiki Load (1.2ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/edit.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 86ms (Views: 75.5ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/wikis" for 127.0.0.1 at 2018-05-30 22:28:48 -0400
+Processing by WikisController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering wikis/index.html.erb within layouts/application
+  [1m[36mWiki Load (0.4ms)[0m  [1m[34mSELECT "wikis".* FROM "wikis"[0m
+  Rendered wikis/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 76ms (Views: 71.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/wikis/19" for 127.0.0.1 at 2018-05-30 22:28:51 -0400
+Processing by WikisController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.2ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  Rendering wikis/show.html.erb within layouts/application
+  Rendered wikis/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 72ms (Views: 65.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/wikis/19/edit" for 127.0.0.1 at 2018-05-30 22:28:52 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.1ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/edit.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 70ms (Views: 63.3ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/wikis/19" for 127.0.0.1 at 2018-05-30 22:29:02 -0400
+Processing by WikisController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1Lb+VpgFcZmJjzL/tvpR5qR1OEekD7zV3p6z0/JkGO0g3MI29siWCaW2vClaYmytzrTy7swjSZYDlCcgHjxsUg==", "wiki"=>{"title"=>"This is Tara's Wiki", "body"=>"This is Tara's Wiki\r\n\r\nThis is the first edit \r\n\r\nThis is my last attempt"}, "commit"=>"Save", "id"=>"19"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.3ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+Redirected to http://localhost:3000/wikis/19/edit
+Completed 302 Found in 5ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/wikis/19/edit" for 127.0.0.1 at 2018-05-30 22:29:02 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.1ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/edit.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 49ms (Views: 44.7ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/wikis/19" for 127.0.0.1 at 2018-05-30 22:29:26 -0400
+Processing by WikisController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PtmN9469Mbp2KbZLVkVT5v6ynUJQRcA/jxh8zjj6Hve+hNxXyMFHtnZgWRWpk3+mdZDg9kS3t9qAbtZLIZe2Pg==", "wiki"=>{"title"=>"This is Tara's Wiki", "body"=>"This is Tara's Wiki\r\n\r\nThis is the first edit"}, "commit"=>"Save", "id"=>"19"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.1ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+Redirected to http://localhost:3000/wikis/19/edit
+Completed 302 Found in 5ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/wikis/19/edit" for 127.0.0.1 at 2018-05-30 22:29:26 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.1ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/edit.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 53ms (Views: 49.2ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/wikis/19" for 127.0.0.1 at 2018-05-30 22:31:51 -0400
+Processing by WikisController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kSqyCsQI4VsRpadAArS17B4OVJFIcPmZWExwvKwW6b8Rd+OqgnSXVxHsSB79YpmslSwpJVyCjnxXOto5tXtBdg==", "wiki"=>{"title"=>"This is Tara's Wiki", "body"=>"This is Tara's Wiki\r\n\r\nThis is the first edit"}, "commit"=>"Save", "id"=>"19"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.2ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/wikis/19
+Completed 302 Found in 57ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/wikis/19" for 127.0.0.1 at 2018-05-30 22:31:51 -0400
+Processing by WikisController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.1ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  Rendering wikis/show.html.erb within layouts/application
+  Rendered wikis/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 65ms (Views: 60.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/wikis/19/edit" for 127.0.0.1 at 2018-05-30 22:31:57 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.1ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/edit.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 63ms (Views: 55.4ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/wikis/19" for 127.0.0.1 at 2018-05-30 22:32:07 -0400
+Processing by WikisController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sQHcrezkSkHmwVtonQ7Q6S4EHChWHOD29k4SGkuAfcxFa+DNgimt0cr41b5xlu2iRMXWgT4wFbUrRIbpp9gJcw==", "wiki"=>{"title"=>"This is Tara's Wiki", "body"=>"This is Tara's Wiki\r\n\r\nThis is the first edit\r\nThis is the second edit"}, "commit"=>"Save", "id"=>"19"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.3ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "wikis" SET "body" = ?, "updated_at" = ? WHERE "wikis"."id" = ?[0m  [["body", "This is Tara's Wiki\r\n\r\nThis is the first edit\r\nThis is the second edit"], ["updated_at", "2018-05-31 02:32:07.936010"], ["id", 19]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/wikis/19
+Completed 302 Found in 12ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/wikis/19" for 127.0.0.1 at 2018-05-30 22:32:07 -0400
+Processing by WikisController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.2ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  Rendering wikis/show.html.erb within layouts/application
+  Rendered wikis/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 54ms (Views: 49.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/wikis" for 127.0.0.1 at 2018-05-30 22:32:11 -0400
+Processing by WikisController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering wikis/index.html.erb within layouts/application
+  [1m[36mWiki Load (0.3ms)[0m  [1m[34mSELECT "wikis".* FROM "wikis"[0m
+  Rendered wikis/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 58ms (Views: 53.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/wikis/15" for 127.0.0.1 at 2018-05-30 22:32:12 -0400
+Processing by WikisController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.1ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering wikis/show.html.erb within layouts/application
+  Rendered wikis/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 64ms (Views: 58.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/wikis/15/edit" for 127.0.0.1 at 2018-05-30 22:32:16 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.1ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/edit.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 71ms (Views: 64.4ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/wikis/15" for 127.0.0.1 at 2018-05-30 22:32:25 -0400
+Processing by WikisController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xy0yt/dVGQTf6tKcd4C1MBeA2QaNvEObm1c6nPqAlpfdoP+g0dLtBmnHBD2LQx1AtjdoTHLvpZNWD/S7X/q1lA==", "wiki"=>{"title"=>"This is Joe's Wiki", "body"=>"This is Joe's wiki\r\n\r\nThis is Tara's edit\r\nThis is Tara's second edit\r\nThis is Tara's third edit\r\nThis is Tara's forth edit\r\nThis is Tara's fifth edit\r\nThis is the last edit"}, "commit"=>"Save", "id"=>"15"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.2ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/wikis/15/edit
+Completed 302 Found in 9ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/wikis/15/edit" for 127.0.0.1 at 2018-05-30 22:32:25 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.1ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/edit.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 62ms (Views: 58.2ms | ActiveRecord: 0.4ms)
+
+
