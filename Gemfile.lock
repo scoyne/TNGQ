@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/stympy/faker.git
+  revision: 3d622631c9137398ce07bc3eaae56d3cf80c16d7
+  branch: master
+  specs:
+    faker (1.8.7)
+      i18n (>= 0.7)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -201,6 +209,7 @@ DEPENDENCIES
   bootstrap-sass
   coffee-rails
   devise
+  faker!
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)

@@ -59,3 +59,7 @@ source 'https://rubygems.org'
 
 # Use Pundit for user authorization
   gem 'pundit'
+
+# Use Faker for generating seed
+  gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
+  
