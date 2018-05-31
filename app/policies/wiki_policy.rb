@@ -1,15 +1,16 @@
 class WikiPolicy < ApplicationPolicy
-
-    def edit
+    attr_reader :user, :wiki
+    
+    def initialize(user, wiki)
+        @user = user
+        @wiki = wiki
     end
 
-    def update
-        @user_present?
+    def update?
+        @user.present? || @user.admin?
     end
 
-    class Scope < Scope
-        def resolve
-            scope
-        end
+    def destroy?
+        @user.present? || @user.admin?
     end
 end
