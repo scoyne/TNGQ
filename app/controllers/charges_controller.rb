@@ -26,7 +26,7 @@ class ChargesController < ApplicationController
       )
       
       flash[:success] = "Thank you for your membership! #{current_user.email}!"
-      redirect_to charges_path
+      redirect_to root_path
 
       rescue Stripe::CardError => e
         flash[:error] = e.message
@@ -34,17 +34,6 @@ class ChargesController < ApplicationController
     end
 
 
-    def downgrade
-        current_user.up_attribute(:role, 'standard')
-
-        if current_user.save
-          flash[:notice] = "You have successfully cancelled your Premium Membership."
-          redirect_to root_path
-        else
-          flash[:alert] = "There was a problem cancelling your account.  Please try again."
-          redirect_to root_path
-        end
-    end
 
     private
     def premium_role
