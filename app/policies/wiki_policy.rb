@@ -10,7 +10,5 @@ class WikiPolicy < ApplicationPolicy
         user.admin? || wiki.try(:user) == user
     end
 
-    def destroy?
-        @user.present? || @user.admin?
-    end
+ 
 end

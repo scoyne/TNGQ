@@ -1,7 +1,11 @@
 <h1><%= @wiki.title %></h1>
+<small><%= @wiki.user.email%> created this <%= time_ago_in_words(@wiki.created_at) %> </small>
+<br />
+<p> Private? <%= @wiki.private %> 
 <div class="row">
     <div class="col-md-8">
         <p><%= @wiki.body %></p>
+        
     </div>
     <div class="col-md-4">
         <%= link_to "Edit", edit_wiki_path(@wiki), class: 'btn btn-success' %>

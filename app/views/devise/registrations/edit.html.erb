@@ -49,7 +49,7 @@
   <h3>Change My Account</h3>
 
     <% if current_user.premium? %>
-      <%= link_to "Downgrade", downgrade_user_path(current_user),data: { confirm: "Are you sure?" }, class: 'btn btn-warning' %>
+      <%= link_to "Downgrade", downgrade_user_path(current_user),data: { confirm: "Downgrading your account will turn your Private Wikis Public.  Are you sure you wish to continue?" }, class: 'btn btn-warning' %>
     <% end %>
 
 

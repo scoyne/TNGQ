@@ -2,6 +2,7 @@ class WikisController < ApplicationController
   before_action :authenticate_user!
 
   def index
+    @user = User.find_by(id: session[:user_id])
     @wiki = Wiki.all
   end
 
@@ -65,7 +66,7 @@ end
 
   def authorize_user
     wiki = Wiki.find(params[:id])
-    unless current_user == wiki.user || current_user.admin?
+    unless current_user.id == wiki.user.id || current_user.admin?
       flash[:alert] = "You can only edit public wiki pages or your own wiki page."
       redirect_to [wiki, wiki]
     end

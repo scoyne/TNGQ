@@ -20,7 +20,8 @@ require 'faker'
         wiki = Wiki.create!(
             user: users.sample,
             title:      Faker::NewGirl.character,
-            body:       Faker::NewGirl.quote
+            body:       Faker::NewGirl.quote,
+            private:    false
         )
     end
     wikis = Wiki.all
