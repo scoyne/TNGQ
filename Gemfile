@@ -71,3 +71,6 @@ source 'https://rubygems.org'
 
 # Use Pusher to generate a ruby interface to pusher http api for figaro
   gem 'pusher'
+
+# Use RedCarpet for markdown
+  gem 'redcarpet'
