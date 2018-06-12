@@ -1,0 +1,9 @@
+<% if collaborator = current_user.collaborator_for(@wiki) %>
+   <%= link_to [wiki, collaborator], class: 'btn btn-danger', method: :delete do %>
+     <i class="glyphicon glyphicon-star-empty"> </i>&nbsp; Uncollaborate
+   <% end %>
+ <% else %>
+   <%= link_to [@wiki, Collaborators.new], class: 'btn btn-primary', method: :post do %>
+     <i class="glyphicon glyphicon-star"> </i>&nbsp; Collaborate
+   <% end %>
+ <% end %>

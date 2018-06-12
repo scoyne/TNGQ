@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :wikis, dependent: :destroy
+  has_many :collaborators, dependent: :destroy
 
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable
@@ -8,10 +9,14 @@ class User < ApplicationRecord
   before_save { self.role ||= :standard } # setting user role or if none provided setting standard as default
 
   enum role: [:standard, :premium, :admin] # setting numeric valuse to user rules 0 = standard, 1 = premium, 2 = admin
+  
   after_initialize :set_initial_role # setting inital role to standard unless set
-
   def set_initial_role
     self.role ||= :standard # defining the initial / default role 
+  end
+
+  def collaborator_for(wiki)
+    collaborators.where(wiki_id: wiki.id).first
   end
 
   protected
@@ -19,12 +24,3 @@ class User < ApplicationRecord
     false
   end
 end
-
-
-###########
-
-class User < ApplicationRecord
-
-end
-
-###########
