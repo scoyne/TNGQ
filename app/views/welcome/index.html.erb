@@ -1,2 +1,23 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<div class="jumbotron">
+    <h1>Welcome to Blocipedia</h1>
+    <p>Your one stop for useless information.</p>
+    <p> 
+        <%= link_to "Sign Up", new_user_registration_path, class: 'btn btn-primary'%> or 
+        <%= link_to "Sign In", new_user_session_path, class: 'btn btn-primary' %>
+    </p>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <h3>Standard Membership</h3>
+        <p>A standard membership permits users to create public wikis.</p>
+    </div>
+    <div class="col-md-4">
+        <h3>Premium Membership</h3>
+        <p>Premium membership permits users to create public wikis as well as private wikis.</p>
+    </div>
+    <div class="col-md-4">
+        <h3>Administrator</h3>
+        <p>Blocipedia admins can modify any wiki.</p>
+    </div>
+</div>
+

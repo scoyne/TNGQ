@@ -2,31 +2,31 @@ class WikisController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @user = User.find_by(id: session[:user_id])
-    @wiki = Wiki.all
+    @wiki = policy_scope(Wiki)
   end
 
   def show
     @wiki = Wiki.find(params[:id])
+    authorize @wiki
   end
 
   def new
     @wiki = Wiki.new
-  end
+    authorize @wiki
+  end  
 
-def create
-  @wiki = current_user.wikis.create(wiki_params)
-  # @wiki = Wiki.new
-  # @wiki.title = params[:wiki][:title]
-  # @wiki.body = params[:wiki][:body]
-  if @wiki.save
-    flash[:notice] = "Your Wiki was successfully saved."
-    redirect_to @wiki
-  else
-    flash.now[:alert] = "There was an error saving the wiki. Please try again."
-    render :new
+  def create
+    @wiki = Wiki.new(params.require(:wiki).permit(:title, :body, :private))
+    @wiki.user = current_user
+    authorize @wiki
+    if @wiki.save
+      flash[:notice] = "Your Wiki was successfully saved."
+      redirect_to @wiki
+    else
+      flash.now[:alert] = "There was an error saving the wiki. Please try again."
+      render :new
+    end 
   end
-end
 
   def edit
     @wiki = Wiki.find(params[:id])
@@ -34,25 +34,20 @@ end
 
   def update
     @wiki = Wiki.find(params[:id])
-    # @wiki.title = params[:wiki][:title]
-    # @wiki.body = params[:wiki][:body] 
-    authorize @wiki
-    @wiki.assign_attributes(wiki_params)
-
-    if @wiki.save
+    if @wiki.update_attributes(params.require(:wiki).permit(:title, :body))
+      flash[:notice] = "Your wiki was successfully updated."]
       redirect_to @wiki
     else
+      flash[:alert] = "There was an error updating your wiki. Please try again."
       render :edit
     end  
   end
 
   def destroy
     @wiki = Wiki.find(params[:id])
-    authorize @wiki
-
     if @wiki.destroy
       flash[:notice] = "\"#{@wiki.title}\" was deleted successfully."
-      redirect_to wikis_path
+      redirect_to @wiki
     else
       flash.now[:alert] = "There was an error deleting the wiki."
       render :show
