@@ -15881,3 +15881,466 @@ Processing by WikisController#new as HTML
 Completed 200 OK in 39ms (Views: 34.3ms | ActiveRecord: 0.3ms)
 
 
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "confirmation_token" varchar, "confirmed_at" datetime, "confirmation_sent_at" datetime, "role" integer)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_confirmation_token" ON "users" ("confirmation_token")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "wikis"[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "wikis" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "private" boolean, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE  INDEX "index_wikis_on_user_id" ON "wikis" ("user_id")[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180527155407)[0m
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180525120154),
+(20180525165631),
+(20180525123001);
+
+[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-06-13 19:41:15.210537"], ["updated_at", "2018-06-13 19:41:15.210537"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "confirmation_token" varchar, "confirmed_at" datetime, "confirmation_sent_at" datetime, "role" integer)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_confirmation_token" ON "users" ("confirmation_token")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "wikis"[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "wikis" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "private" boolean, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE  INDEX "index_wikis_on_user_id" ON "wikis" ("user_id")[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180527155407)[0m
+  [1m[35m (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180525120154),
+(20180525165631),
+(20180525123001);
+
+[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-06-13 19:41:15.247306"], ["updated_at", "2018-06-13 19:41:15.247306"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2018-06-13 19:41:15.250600"], ["key", "environment"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "dan@johnson.biz"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "role") VALUES (?, ?, ?, ?, ?)[0m  [["email", "dan@johnson.biz"], ["encrypted_password", "$2a$11$9khFKNwSpfTVdki4O/gIx.4l9aIL8dFoqhBkxn8SvaKss6Q4M6IO6"], ["created_at", "2018-06-13 19:41:16.070061"], ["updated_at", "2018-06-13 19:41:16.070061"], ["role", 0]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "halle@kertzmann.net"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "role") VALUES (?, ?, ?, ?, ?)[0m  [["email", "halle@kertzmann.net"], ["encrypted_password", "$2a$11$UL36GDhrEIVouJq.VfJvReRAHDPzSEYPxzh8G8iUuTZ3EnOfoSAMK"], ["created_at", "2018-06-13 19:41:16.216131"], ["updated_at", "2018-06-13 19:41:16.216131"], ["role", 0]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "stevedietrich@schmittpfannerstill.co"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "role") VALUES (?, ?, ?, ?, ?)[0m  [["email", "stevedietrich@schmittpfannerstill.co"], ["encrypted_password", "$2a$11$IHdZSnI3xjIQU77/nm17beKGQ7oH1hvYTh17CHwmKSthZLkGdkvG2"], ["created_at", "2018-06-13 19:41:16.363586"], ["updated_at", "2018-06-13 19:41:16.363586"], ["role", 0]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ceceliasteuber@medhursthammes.biz"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "role") VALUES (?, ?, ?, ?, ?)[0m  [["email", "ceceliasteuber@medhursthammes.biz"], ["encrypted_password", "$2a$11$1.x0blR35GAf8jl8IjjtLeFudVyiUc4EaK/emkIOwz70CmUBnVUZu"], ["created_at", "2018-06-13 19:41:16.508321"], ["updated_at", "2018-06-13 19:41:16.508321"], ["role", 0]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "maryjane@rowetoy.biz"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "role") VALUES (?, ?, ?, ?, ?)[0m  [["email", "maryjane@rowetoy.biz"], ["encrypted_password", "$2a$11$T5UHXV3/PTaroFKPfJHKguuCwN0ItmqNAx9UPOxqdFqgBUOOJQit."], ["created_at", "2018-06-13 19:41:16.655699"], ["updated_at", "2018-06-13 19:41:16.655699"], ["role", 0]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "rocio@buckridgekilback.info"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "role") VALUES (?, ?, ?, ?, ?)[0m  [["email", "rocio@buckridgekilback.info"], ["encrypted_password", "$2a$11$Y8ahRfyWhH/RSYQBocGvM.wDCVEnKXaGUVx1z8BsMncLF9wVM2fka"], ["created_at", "2018-06-13 19:41:16.801555"], ["updated_at", "2018-06-13 19:41:16.801555"], ["role", 0]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "clauderaynor@mohrdoyle.net"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "role") VALUES (?, ?, ?, ?, ?)[0m  [["email", "clauderaynor@mohrdoyle.net"], ["encrypted_password", "$2a$11$qEELrKAapIjmzJHHN8hwf.SVOJgErYX49jLHCW4GwSF0lGVeqnmFW"], ["created_at", "2018-06-13 19:41:16.950023"], ["updated_at", "2018-06-13 19:41:16.950023"], ["role", 0]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "barrettbeatty@schimmel.org"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "role") VALUES (?, ?, ?, ?, ?)[0m  [["email", "barrettbeatty@schimmel.org"], ["encrypted_password", "$2a$11$oBrg4nqiC0IamToC9xZTW.bmJjPq.34NA3LAl7n2IxYhWd4Iq681i"], ["created_at", "2018-06-13 19:41:17.100133"], ["updated_at", "2018-06-13 19:41:17.100133"], ["role", 0]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "sheldon@lemkemann.co"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "role") VALUES (?, ?, ?, ?, ?)[0m  [["email", "sheldon@lemkemann.co"], ["encrypted_password", "$2a$11$bYZQ/jX7FgmLHonv8E9OZee7tJeEpRI21XxWgyc8zh087sdv/x.dC"], ["created_at", "2018-06-13 19:41:17.246863"], ["updated_at", "2018-06-13 19:41:17.246863"], ["role", 0]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "haydenbechtelar@carrolloconner.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "role") VALUES (?, ?, ?, ?, ?)[0m  [["email", "haydenbechtelar@carrolloconner.com"], ["encrypted_password", "$2a$11$nYxD3JoB15.C8IGtQcyq0uO.VjmQzwFPAMkbaeo1E7PEBqWX51bOy"], ["created_at", "2018-06-13 19:41:17.395501"], ["updated_at", "2018-06-13 19:41:17.395501"], ["role", 0]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Winston Bishop"], ["body", "I'm really fighting the urge to buy you a lobster dinner."], ["private", "f"], ["user_id", 9], ["created_at", "2018-06-13 19:41:17.422604"], ["updated_at", "2018-06-13 19:41:17.422604"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Coach"], ["body", "You are a beautiful white man, Nick Miller."], ["private", "f"], ["user_id", 9], ["created_at", "2018-06-13 19:41:17.425945"], ["updated_at", "2018-06-13 19:41:17.425945"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Winston Bishop"], ["body", "If you had a jacket on with a bunch of yellow feathers, I'd be done."], ["private", "f"], ["user_id", 1], ["created_at", "2018-06-13 19:41:17.429101"], ["updated_at", "2018-06-13 19:41:17.429101"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Coach"], ["body", "Are you cooking a frittata in a sauce pan? What is this – prison?"], ["private", "f"], ["user_id", 6], ["created_at", "2018-06-13 19:41:17.431812"], ["updated_at", "2018-06-13 19:41:17.431812"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Coach"], ["body", "You are a beautiful white man, Nick Miller."], ["private", "f"], ["user_id", 3], ["created_at", "2018-06-13 19:41:17.434371"], ["updated_at", "2018-06-13 19:41:17.434371"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Nick Miller"], ["body", "If you need me, I'll be in my room, listening to some mainstream hip-hop."], ["private", "f"], ["user_id", 2], ["created_at", "2018-06-13 19:41:17.437508"], ["updated_at", "2018-06-13 19:41:17.437508"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Winston Bishop"], ["body", "I don't want some janky freshwater bitch fish, Winston. I want a lionfish."], ["private", "f"], ["user_id", 9], ["created_at", "2018-06-13 19:41:17.440978"], ["updated_at", "2018-06-13 19:41:17.440978"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Coach"], ["body", "How's the new apartment? Does it smell like new paint and compromise?"], ["private", "f"], ["user_id", 6], ["created_at", "2018-06-13 19:41:17.443454"], ["updated_at", "2018-06-13 19:41:17.443454"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Nick Miller"], ["body", "Gave me cookie got you cookie!"], ["private", "f"], ["user_id", 1], ["created_at", "2018-06-13 19:41:17.445811"], ["updated_at", "2018-06-13 19:41:17.445811"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Nick Miller"], ["body", "Please take that off. You look like a homeless pencil."], ["private", "f"], ["user_id", 3], ["created_at", "2018-06-13 19:41:17.448825"], ["updated_at", "2018-06-13 19:41:17.448825"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Nick Miller"], ["body", "Are you cooking a frittata in a sauce pan? What is this – prison?"], ["private", "f"], ["user_id", 1], ["created_at", "2018-06-13 19:41:17.451377"], ["updated_at", "2018-06-13 19:41:17.451377"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Coach"], ["body", "Old people freak me out. With their hands and their legs. They’re like the people version of pleated pants."], ["private", "f"], ["user_id", 9], ["created_at", "2018-06-13 19:41:17.453826"], ["updated_at", "2018-06-13 19:41:17.453826"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Schmidt"], ["body", "Old people freak me out. With their hands and their legs. They’re like the people version of pleated pants."], ["private", "f"], ["user_id", 4], ["created_at", "2018-06-13 19:41:17.456229"], ["updated_at", "2018-06-13 19:41:17.456229"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Coach"], ["body", "I'm really fighting the urge to buy you a lobster dinner."], ["private", "f"], ["user_id", 3], ["created_at", "2018-06-13 19:41:17.459017"], ["updated_at", "2018-06-13 19:41:17.459017"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Winston Bishop"], ["body", "With your big, beautiful blue eyes and my Blair Underwood-like skin, we'd have the most beautiful baby the world has ever seen."], ["private", "f"], ["user_id", 8], ["created_at", "2018-06-13 19:41:17.462099"], ["updated_at", "2018-06-13 19:41:17.462099"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Cece"], ["body", "I did laundry. I smell like a baby in a damn meadow."], ["private", "f"], ["user_id", 6], ["created_at", "2018-06-13 19:41:17.464926"], ["updated_at", "2018-06-13 19:41:17.464926"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Cece"], ["body", "Are you 'White Fanging' me?"], ["private", "f"], ["user_id", 8], ["created_at", "2018-06-13 19:41:17.467557"], ["updated_at", "2018-06-13 19:41:17.467557"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Cece"], ["body", "With your big, beautiful blue eyes and my Blair Underwood-like skin, we'd have the most beautiful baby the world has ever seen."], ["private", "f"], ["user_id", 5], ["created_at", "2018-06-13 19:41:17.470712"], ["updated_at", "2018-06-13 19:41:17.470712"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Jessica Day"], ["body", "This place is fancy and I don't know which fork to kill myself with."], ["private", "f"], ["user_id", 4], ["created_at", "2018-06-13 19:41:17.473595"], ["updated_at", "2018-06-13 19:41:17.473595"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Coach"], ["body", "Old people freak me out. With their hands and their legs. They’re like the people version of pleated pants."], ["private", "f"], ["user_id", 4], ["created_at", "2018-06-13 19:41:17.476543"], ["updated_at", "2018-06-13 19:41:17.476543"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Schmidt"], ["body", "Winston and Ferguson about to eat some pasta!"], ["private", "f"], ["user_id", 3], ["created_at", "2018-06-13 19:41:17.480022"], ["updated_at", "2018-06-13 19:41:17.480022"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Nick Miller"], ["body", "Did you just say 'butt drinking?' You can’t say 'butt drinking' and not explain what it is. That's two of my four favorite things."], ["private", "f"], ["user_id", 2], ["created_at", "2018-06-13 19:41:17.483082"], ["updated_at", "2018-06-13 19:41:17.483082"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Jessica Day"], ["body", "Can you believe the zoo wouldn't let me borrow their white tiger? I mean, the nerve! Philip Seymour Hoffman is going to be sitting at the back of the party thinking, 'Look at that guy. He couldn’t even get a big cat.'"], ["private", "f"], ["user_id", 3], ["created_at", "2018-06-13 19:41:17.486036"], ["updated_at", "2018-06-13 19:41:17.486036"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Nick Miller"], ["body", "Are you cooking a frittata in a sauce pan? What is this – prison?"], ["private", "f"], ["user_id", 4], ["created_at", "2018-06-13 19:41:17.488926"], ["updated_at", "2018-06-13 19:41:17.488926"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Winston Bishop"], ["body", "I don't know how it happened, man, but somehow I got on that woman's cycle of menstruation…and I got that menstruation inside of me."], ["private", "f"], ["user_id", 9], ["created_at", "2018-06-13 19:41:17.492075"], ["updated_at", "2018-06-13 19:41:17.492075"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Jessica Day"], ["body", "If you had a jacket on with a bunch of yellow feathers, I'd be done."], ["private", "f"], ["user_id", 3], ["created_at", "2018-06-13 19:41:17.495139"], ["updated_at", "2018-06-13 19:41:17.495139"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Winston Bishop"], ["body", "If you had a jacket on with a bunch of yellow feathers, I'd be done."], ["private", "f"], ["user_id", 5], ["created_at", "2018-06-13 19:41:17.498012"], ["updated_at", "2018-06-13 19:41:17.498012"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Coach"], ["body", "I had figure skating lessons until I was 13, and then my mom sobered up and realized I was a boy."], ["private", "f"], ["user_id", 6], ["created_at", "2018-06-13 19:41:17.500864"], ["updated_at", "2018-06-13 19:41:17.500864"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Jessica Day"], ["body", "A no-nail oath? You thought I was gonna sleep with one of you, like I just couldn't help it?"], ["private", "f"], ["user_id", 10], ["created_at", "2018-06-13 19:41:17.503852"], ["updated_at", "2018-06-13 19:41:17.503852"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Schmidt"], ["body", "You are a beautiful white man, Nick Miller."], ["private", "f"], ["user_id", 4], ["created_at", "2018-06-13 19:41:17.507341"], ["updated_at", "2018-06-13 19:41:17.507341"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Winston Bishop"], ["body", "A no-nail oath? You thought I was gonna sleep with one of you, like I just couldn't help it?"], ["private", "f"], ["user_id", 5], ["created_at", "2018-06-13 19:41:17.513374"], ["updated_at", "2018-06-13 19:41:17.513374"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Schmidt"], ["body", "If you had a jacket on with a bunch of yellow feathers, I'd be done."], ["private", "f"], ["user_id", 3], ["created_at", "2018-06-13 19:41:17.516005"], ["updated_at", "2018-06-13 19:41:17.516005"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Winston Bishop"], ["body", "With your big, beautiful blue eyes and my Blair Underwood-like skin, we'd have the most beautiful baby the world has ever seen."], ["private", "f"], ["user_id", 10], ["created_at", "2018-06-13 19:41:17.518631"], ["updated_at", "2018-06-13 19:41:17.518631"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Schmidt"], ["body", "Did you just say 'butt drinking?' You can’t say 'butt drinking' and not explain what it is. That's two of my four favorite things."], ["private", "f"], ["user_id", 6], ["created_at", "2018-06-13 19:41:17.521222"], ["updated_at", "2018-06-13 19:41:17.521222"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Nick Miller"], ["body", "I don't know how it happened, man, but somehow I got on that woman's cycle of menstruation…and I got that menstruation inside of me."], ["private", "f"], ["user_id", 10], ["created_at", "2018-06-13 19:41:17.524342"], ["updated_at", "2018-06-13 19:41:17.524342"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Cece"], ["body", "Old people freak me out. With their hands and their legs. They’re like the people version of pleated pants."], ["private", "f"], ["user_id", 8], ["created_at", "2018-06-13 19:41:17.527205"], ["updated_at", "2018-06-13 19:41:17.527205"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Nick Miller"], ["body", "This place is fancy and I don't know which fork to kill myself with."], ["private", "f"], ["user_id", 1], ["created_at", "2018-06-13 19:41:17.530432"], ["updated_at", "2018-06-13 19:41:17.530432"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Winston Bishop"], ["body", "I don't celebrate Christmas. Or, as I like to call it, 'White Anglo Saxon Winter Privilege Night'."], ["private", "f"], ["user_id", 3], ["created_at", "2018-06-13 19:41:17.533458"], ["updated_at", "2018-06-13 19:41:17.533458"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Winston Bishop"], ["body", "I don't know how it happened, man, but somehow I got on that woman's cycle of menstruation…and I got that menstruation inside of me."], ["private", "f"], ["user_id", 10], ["created_at", "2018-06-13 19:41:17.536774"], ["updated_at", "2018-06-13 19:41:17.536774"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Coach"], ["body", "Nick is delicate. Like a flower. Like a chubby, damaged flower who hates himself."], ["private", "f"], ["user_id", 1], ["created_at", "2018-06-13 19:41:17.540031"], ["updated_at", "2018-06-13 19:41:17.540031"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Nick Miller"], ["body", "Did you just say 'butt drinking?' You can’t say 'butt drinking' and not explain what it is. That's two of my four favorite things."], ["private", "f"], ["user_id", 3], ["created_at", "2018-06-13 19:41:17.543220"], ["updated_at", "2018-06-13 19:41:17.543220"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Schmidt"], ["body", "How's the new apartment? Does it smell like new paint and compromise?"], ["private", "f"], ["user_id", 5], ["created_at", "2018-06-13 19:41:17.546006"], ["updated_at", "2018-06-13 19:41:17.546006"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Nick Miller"], ["body", "Take these, and take care of them. I can get a tetanus shot, but I can't cure damaged suede."], ["private", "f"], ["user_id", 9], ["created_at", "2018-06-13 19:41:17.548739"], ["updated_at", "2018-06-13 19:41:17.548739"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Nick Miller"], ["body", "It hurts. I feel like I've laid a million eggs and they're all hatching. I feel like I want to murder someone and I also want soft pretzels."], ["private", "f"], ["user_id", 8], ["created_at", "2018-06-13 19:41:17.551774"], ["updated_at", "2018-06-13 19:41:17.551774"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Schmidt"], ["body", "With your big, beautiful blue eyes and my Blair Underwood-like skin, we'd have the most beautiful baby the world has ever seen."], ["private", "f"], ["user_id", 5], ["created_at", "2018-06-13 19:41:17.554648"], ["updated_at", "2018-06-13 19:41:17.554648"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Winston Bishop"], ["body", "Did you just say 'butt drinking?' You can’t say 'butt drinking' and not explain what it is. That's two of my four favorite things."], ["private", "f"], ["user_id", 2], ["created_at", "2018-06-13 19:41:17.557316"], ["updated_at", "2018-06-13 19:41:17.557316"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Jessica Day"], ["body", "I was sabotaged by my baby box, which means I will never trust anything that comes out of it."], ["private", "f"], ["user_id", 9], ["created_at", "2018-06-13 19:41:17.560067"], ["updated_at", "2018-06-13 19:41:17.560067"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Schmidt"], ["body", "Winston and Ferguson about to eat some pasta!"], ["private", "f"], ["user_id", 10], ["created_at", "2018-06-13 19:41:17.563576"], ["updated_at", "2018-06-13 19:41:17.563576"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Schmidt"], ["body", "I don't want some janky freshwater bitch fish, Winston. I want a lionfish."], ["private", "f"], ["user_id", 8], ["created_at", "2018-06-13 19:41:17.566903"], ["updated_at", "2018-06-13 19:41:17.566903"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Schmidt"], ["body", "Nick is delicate. Like a flower. Like a chubby, damaged flower who hates himself."], ["private", "f"], ["user_id", 8], ["created_at", "2018-06-13 19:41:17.569993"], ["updated_at", "2018-06-13 19:41:17.569993"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Cece"], ["body", "I'm gonna end up alone. I’m gonna be a single old lady, flashing people on the subway."], ["private", "f"], ["user_id", 2], ["created_at", "2018-06-13 19:41:17.573158"], ["updated_at", "2018-06-13 19:41:17.573158"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Cece"], ["body", "A no-nail oath? You thought I was gonna sleep with one of you, like I just couldn't help it?"], ["private", "f"], ["user_id", 5], ["created_at", "2018-06-13 19:41:17.576338"], ["updated_at", "2018-06-13 19:41:17.576338"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Nick Miller"], ["body", "Nick is delicate. Like a flower. Like a chubby, damaged flower who hates himself."], ["private", "f"], ["user_id", 4], ["created_at", "2018-06-13 19:41:17.579597"], ["updated_at", "2018-06-13 19:41:17.579597"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Nick Miller"], ["body", "How's the new apartment? Does it smell like new paint and compromise?"], ["private", "f"], ["user_id", 7], ["created_at", "2018-06-13 19:41:17.583133"], ["updated_at", "2018-06-13 19:41:17.583133"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Jessica Day"], ["body", "I don't celebrate Christmas. Or, as I like to call it, 'White Anglo Saxon Winter Privilege Night'."], ["private", "f"], ["user_id", 2], ["created_at", "2018-06-13 19:41:17.585985"], ["updated_at", "2018-06-13 19:41:17.585985"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Cece"], ["body", "How's the new apartment? Does it smell like new paint and compromise?"], ["private", "f"], ["user_id", 8], ["created_at", "2018-06-13 19:41:17.589076"], ["updated_at", "2018-06-13 19:41:17.589076"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Schmidt"], ["body", "I'm really fighting the urge to buy you a lobster dinner."], ["private", "f"], ["user_id", 3], ["created_at", "2018-06-13 19:41:17.591897"], ["updated_at", "2018-06-13 19:41:17.591897"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Cece"], ["body", "Damp towel, damp! It’s like a really big wet nap. I feel like I'm being licked by a golden retriever. Look at this bathroom. There should not be two girls in this bathroom. You're too humid."], ["private", "f"], ["user_id", 4], ["created_at", "2018-06-13 19:41:17.594848"], ["updated_at", "2018-06-13 19:41:17.594848"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Nick Miller"], ["body", "Did you just say 'butt drinking?' You can’t say 'butt drinking' and not explain what it is. That's two of my four favorite things."], ["private", "f"], ["user_id", 7], ["created_at", "2018-06-13 19:41:17.598384"], ["updated_at", "2018-06-13 19:41:17.598384"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Nick Miller"], ["body", "I don't celebrate Christmas. Or, as I like to call it, 'White Anglo Saxon Winter Privilege Night'."], ["private", "f"], ["user_id", 9], ["created_at", "2018-06-13 19:41:17.601324"], ["updated_at", "2018-06-13 19:41:17.601324"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Cece"], ["body", "Are you 'White Fanging' me?"], ["private", "f"], ["user_id", 1], ["created_at", "2018-06-13 19:41:17.604304"], ["updated_at", "2018-06-13 19:41:17.604304"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Nick Miller"], ["body", "With your big, beautiful blue eyes and my Blair Underwood-like skin, we'd have the most beautiful baby the world has ever seen."], ["private", "f"], ["user_id", 2], ["created_at", "2018-06-13 19:41:17.607110"], ["updated_at", "2018-06-13 19:41:17.607110"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Schmidt"], ["body", "Are you cooking a frittata in a sauce pan? What is this – prison?"], ["private", "f"], ["user_id", 6], ["created_at", "2018-06-13 19:41:17.617089"], ["updated_at", "2018-06-13 19:41:17.617089"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Nick Miller"], ["body", "Are you cooking a frittata in a sauce pan? What is this – prison?"], ["private", "f"], ["user_id", 3], ["created_at", "2018-06-13 19:41:17.620517"], ["updated_at", "2018-06-13 19:41:17.620517"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Winston Bishop"], ["body", "If you had a jacket on with a bunch of yellow feathers, I'd be done."], ["private", "f"], ["user_id", 4], ["created_at", "2018-06-13 19:41:17.623615"], ["updated_at", "2018-06-13 19:41:17.623615"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Schmidt"], ["body", "You are a beautiful white man, Nick Miller."], ["private", "f"], ["user_id", 1], ["created_at", "2018-06-13 19:41:17.626610"], ["updated_at", "2018-06-13 19:41:17.626610"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Jessica Day"], ["body", "Did you just say 'butt drinking?' You can’t say 'butt drinking' and not explain what it is. That's two of my four favorite things."], ["private", "f"], ["user_id", 7], ["created_at", "2018-06-13 19:41:17.630138"], ["updated_at", "2018-06-13 19:41:17.630138"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Nick Miller"], ["body", "A no-nail oath? You thought I was gonna sleep with one of you, like I just couldn't help it?"], ["private", "f"], ["user_id", 6], ["created_at", "2018-06-13 19:41:17.633106"], ["updated_at", "2018-06-13 19:41:17.633106"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Schmidt"], ["body", "Old people freak me out. With their hands and their legs. They’re like the people version of pleated pants."], ["private", "f"], ["user_id", 6], ["created_at", "2018-06-13 19:41:17.636235"], ["updated_at", "2018-06-13 19:41:17.636235"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Nick Miller"], ["body", "Take these, and take care of them. I can get a tetanus shot, but I can't cure damaged suede."], ["private", "f"], ["user_id", 7], ["created_at", "2018-06-13 19:41:17.638840"], ["updated_at", "2018-06-13 19:41:17.638840"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Jessica Day"], ["body", "Damp towel, damp! It’s like a really big wet nap. I feel like I'm being licked by a golden retriever. Look at this bathroom. There should not be two girls in this bathroom. You're too humid."], ["private", "f"], ["user_id", 4], ["created_at", "2018-06-13 19:41:17.641296"], ["updated_at", "2018-06-13 19:41:17.641296"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Nick Miller"], ["body", "You are a beautiful white man, Nick Miller."], ["private", "f"], ["user_id", 8], ["created_at", "2018-06-13 19:41:17.644510"], ["updated_at", "2018-06-13 19:41:17.644510"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Schmidt"], ["body", "You are a beautiful white man, Nick Miller."], ["private", "f"], ["user_id", 8], ["created_at", "2018-06-13 19:41:17.647546"], ["updated_at", "2018-06-13 19:41:17.647546"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Jessica Day"], ["body", "Gave me cookie got you cookie!"], ["private", "f"], ["user_id", 6], ["created_at", "2018-06-13 19:41:17.650040"], ["updated_at", "2018-06-13 19:41:17.650040"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Coach"], ["body", "Did you just say 'butt drinking?' You can’t say 'butt drinking' and not explain what it is. That's two of my four favorite things."], ["private", "f"], ["user_id", 8], ["created_at", "2018-06-13 19:41:17.652581"], ["updated_at", "2018-06-13 19:41:17.652581"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Winston Bishop"], ["body", "Winston and Ferguson about to eat some pasta!"], ["private", "f"], ["user_id", 4], ["created_at", "2018-06-13 19:41:17.655136"], ["updated_at", "2018-06-13 19:41:17.655136"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Schmidt"], ["body", "Did you just say 'butt drinking?' You can’t say 'butt drinking' and not explain what it is. That's two of my four favorite things."], ["private", "f"], ["user_id", 7], ["created_at", "2018-06-13 19:41:17.658158"], ["updated_at", "2018-06-13 19:41:17.658158"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Cece"], ["body", "I don't celebrate Christmas. Or, as I like to call it, 'White Anglo Saxon Winter Privilege Night'."], ["private", "f"], ["user_id", 4], ["created_at", "2018-06-13 19:41:17.663125"], ["updated_at", "2018-06-13 19:41:17.663125"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Winston Bishop"], ["body", "I did laundry. I smell like a baby in a damn meadow."], ["private", "f"], ["user_id", 3], ["created_at", "2018-06-13 19:41:17.666100"], ["updated_at", "2018-06-13 19:41:17.666100"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Cece"], ["body", "I don't want some janky freshwater bitch fish, Winston. I want a lionfish."], ["private", "f"], ["user_id", 8], ["created_at", "2018-06-13 19:41:17.668909"], ["updated_at", "2018-06-13 19:41:17.668909"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Cece"], ["body", "I'm gonna end up alone. I’m gonna be a single old lady, flashing people on the subway."], ["private", "f"], ["user_id", 1], ["created_at", "2018-06-13 19:41:17.671580"], ["updated_at", "2018-06-13 19:41:17.671580"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Nick Miller"], ["body", "I don't celebrate Christmas. Or, as I like to call it, 'White Anglo Saxon Winter Privilege Night'."], ["private", "f"], ["user_id", 6], ["created_at", "2018-06-13 19:41:17.674219"], ["updated_at", "2018-06-13 19:41:17.674219"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Coach"], ["body", "Can you believe the zoo wouldn't let me borrow their white tiger? I mean, the nerve! Philip Seymour Hoffman is going to be sitting at the back of the party thinking, 'Look at that guy. He couldn’t even get a big cat.'"], ["private", "f"], ["user_id", 3], ["created_at", "2018-06-13 19:41:17.677132"], ["updated_at", "2018-06-13 19:41:17.677132"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Winston Bishop"], ["body", "With your big, beautiful blue eyes and my Blair Underwood-like skin, we'd have the most beautiful baby the world has ever seen."], ["private", "f"], ["user_id", 5], ["created_at", "2018-06-13 19:41:17.680284"], ["updated_at", "2018-06-13 19:41:17.680284"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Winston Bishop"], ["body", "Please take that off. You look like a homeless pencil."], ["private", "f"], ["user_id", 6], ["created_at", "2018-06-13 19:41:17.683215"], ["updated_at", "2018-06-13 19:41:17.683215"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Schmidt"], ["body", "I'm gonna end up alone. I’m gonna be a single old lady, flashing people on the subway."], ["private", "f"], ["user_id", 7], ["created_at", "2018-06-13 19:41:17.686198"], ["updated_at", "2018-06-13 19:41:17.686198"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Coach"], ["body", "Did you just say 'butt drinking?' You can’t say 'butt drinking' and not explain what it is. That's two of my four favorite things."], ["private", "f"], ["user_id", 4], ["created_at", "2018-06-13 19:41:17.689351"], ["updated_at", "2018-06-13 19:41:17.689351"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Jessica Day"], ["body", "Are you cooking a frittata in a sauce pan? What is this – prison?"], ["private", "f"], ["user_id", 2], ["created_at", "2018-06-13 19:41:17.692024"], ["updated_at", "2018-06-13 19:41:17.692024"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Cece"], ["body", "I'm gonna end up alone. I’m gonna be a single old lady, flashing people on the subway."], ["private", "f"], ["user_id", 1], ["created_at", "2018-06-13 19:41:17.695197"], ["updated_at", "2018-06-13 19:41:17.695197"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Schmidt"], ["body", "This place is fancy and I don't know which fork to kill myself with."], ["private", "f"], ["user_id", 10], ["created_at", "2018-06-13 19:41:17.697960"], ["updated_at", "2018-06-13 19:41:17.697960"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Nick Miller"], ["body", "Can you believe the zoo wouldn't let me borrow their white tiger? I mean, the nerve! Philip Seymour Hoffman is going to be sitting at the back of the party thinking, 'Look at that guy. He couldn’t even get a big cat.'"], ["private", "f"], ["user_id", 5], ["created_at", "2018-06-13 19:41:17.700764"], ["updated_at", "2018-06-13 19:41:17.700764"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Jessica Day"], ["body", "I'm really fighting the urge to buy you a lobster dinner."], ["private", "f"], ["user_id", 5], ["created_at", "2018-06-13 19:41:17.703619"], ["updated_at", "2018-06-13 19:41:17.703619"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Schmidt"], ["body", "Winston and Ferguson about to eat some pasta!"], ["private", "f"], ["user_id", 10], ["created_at", "2018-06-13 19:41:17.706377"], ["updated_at", "2018-06-13 19:41:17.706377"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Coach"], ["body", "Nick is delicate. Like a flower. Like a chubby, damaged flower who hates himself."], ["private", "f"], ["user_id", 4], ["created_at", "2018-06-13 19:41:17.708847"], ["updated_at", "2018-06-13 19:41:17.708847"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Schmidt"], ["body", "Are you cooking a frittata in a sauce pan? What is this – prison?"], ["private", "f"], ["user_id", 2], ["created_at", "2018-06-13 19:41:17.714404"], ["updated_at", "2018-06-13 19:41:17.714404"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Cece"], ["body", "Damp towel, damp! It’s like a really big wet nap. I feel like I'm being licked by a golden retriever. Look at this bathroom. There should not be two girls in this bathroom. You're too humid."], ["private", "f"], ["user_id", 6], ["created_at", "2018-06-13 19:41:17.717795"], ["updated_at", "2018-06-13 19:41:17.717795"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Nick Miller"], ["body", "Did you just say 'butt drinking?' You can’t say 'butt drinking' and not explain what it is. That's two of my four favorite things."], ["private", "f"], ["user_id", 8], ["created_at", "2018-06-13 19:41:17.720449"], ["updated_at", "2018-06-13 19:41:17.720449"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Jessica Day"], ["body", "I'm gonna end up alone. I’m gonna be a single old lady, flashing people on the subway."], ["private", "f"], ["user_id", 6], ["created_at", "2018-06-13 19:41:17.723178"], ["updated_at", "2018-06-13 19:41:17.723178"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Jessica Day"], ["body", "With your big, beautiful blue eyes and my Blair Underwood-like skin, we'd have the most beautiful baby the world has ever seen."], ["private", "f"], ["user_id", 7], ["created_at", "2018-06-13 19:41:17.726137"], ["updated_at", "2018-06-13 19:41:17.726137"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wikis" ("title", "body", "private", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Coach"], ["body", "Old people freak me out. With their hands and their legs. They’re like the people version of pleated pants."], ["private", "f"], ["user_id", 6], ["created_at", "2018-06-13 19:41:17.729472"], ["updated_at", "2018-06-13 19:41:17.729472"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "role") VALUES (?, ?, ?, ?, ?)[0m  [["email", "admin@example.com"], ["encrypted_password", "$2a$11$M0YvOnf1x5kwrnx21LG/HOEZJSO9KpMVgNuShvpbhs3ETrUyGPm1S"], ["created_at", "2018-06-13 19:41:17.875925"], ["updated_at", "2018-06-13 19:41:17.875925"], ["role", 2]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "premium@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "role") VALUES (?, ?, ?, ?, ?)[0m  [["email", "premium@example.com"], ["encrypted_password", "$2a$11$7uSRUMKQ/1laQFb2wkoFY.ejh6bbJkHN8PWMWxHUsG5sO/2WFPsWK"], ["created_at", "2018-06-13 19:41:18.021785"], ["updated_at", "2018-06-13 19:41:18.021785"], ["role", 1]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "standard@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "role") VALUES (?, ?, ?, ?, ?)[0m  [["email", "standard@example.com"], ["encrypted_password", "$2a$11$tsrrT0W7Y/jaG9oRjyn1A.I5WfNK60laPAd0Tfg9tr4k0JJxAEY5O"], ["created_at", "2018-06-13 19:41:18.168531"], ["updated_at", "2018-06-13 19:41:18.168531"], ["role", 0]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "wikis"[0m
