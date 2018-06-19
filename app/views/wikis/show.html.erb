@@ -1,15 +1,22 @@
-<h1><%= @wiki.title %>
+<h1><%= @wiki.title %></h1>
+<br />
 <small> <%= @wiki.user.email%> created this <%= time_ago_in_words(@wiki.created_at) %> </small>
-<p>Private?<%= @wiki.private %> </p>
-    <% if policy(Wiki.new).edit? %>
-        <%= link_to "Edit", edit_wiki_path(@wiki), class: 'btn btn-success' %>
-    <% end %>
-</h1>
+<p></p>
+<% if @wiki.private? %>
+    <small>Private</small>
+<% else %>
+    <small>Public</small>
+<% end %>
+<% if policy(Wiki.new).edit? %>
+    <%= link_to "Edit", edit_wiki_path(@wiki), class: 'btn btn-success' %>
+<% end %>
+<hr>
+
 <div class="row">
     <div class="col-md-8">
         <p><%= markdown(@wiki.body) %></p>
         <% if policy(Wiki.new).destroy? %>
-            <%= link_to "Delete wiki", @wiki, method: :delete, class: 'btn btn-danger', data: ( confirm: "Are you sure you want to delete this wiki?"} %>
+            <%= link_to "Delete wiki", @wiki, method: :delete, class: 'btn btn-danger', data: {confirm: "Are you sure you want to delete this wiki?"} %>
         <% end %>
     </div>
     <div class="col-md-4">

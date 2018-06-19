@@ -1,6 +1,11 @@
 class CollaboratorPpolicy < ApplicationPolicy
     def create?
-        return fals if user.blank?
-        return (user.role == 'admin' || user.role == 'premium') && (record.wiki.user == user)
+        user.present? && (record.user == user) && user.role?(:premium)
+    end
+
+    class Scope < Scope
+        def resolve
+            scope
+        end
     end
 end
