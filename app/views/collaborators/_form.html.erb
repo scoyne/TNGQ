@@ -7,3 +7,15 @@
      <i class="glyphicon glyphicon-star"> </i>&nbsp; Collaborate
    <% end %>
  <% end %>
+ <!-- ######### -->
+<% if@wiki.user_id == current_user.id || current_user.admin? %>
+  <div class='form-group'>
+    <% @users.each do |user| %>
+      <h4><%= user.email %></h4>
+      <% if @wiki.collaboration_users.include? user %>
+        <div><%= link_to "Remove a collaborator", wiki_collaborator_path(@wiki, @wiki.collaborators.find_by_user_id(user.id).id), method: :delete, class: 'btn btn-danger' %></div>
+      <% else %>
+        <div><%= link_to "Add a collaborator", wiki_collaborators_path(@wiki, user_id: user.id), method: :post, class: 'btn btn-success' %> </div>
+      <% end %>
+  </div>
+<% end %>

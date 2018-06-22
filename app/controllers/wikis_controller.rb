@@ -2,23 +2,35 @@ class WikisController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @wiki = policy_scope(Wiki)
+    @wikis = WikiPolicy::Scope.new(current_user, Wiki).resolve
   end
-
+#
   def show
     @wiki = Wiki.find(params[:id])
-    authorize @wiki
+    if @wiki.private?
+      if @wiki.user == current_user
+        wiki_path
+      elsif current_user.standard?
+        flash[:alert] = "You must be a premium user to view private wikis."
+        redirect_to new_charge_path
+      elsif @wiki.users.exclude?(current_user)
+        flash[:alert] = "You must be a collaborator to view that wiki."
+        redirect_to wikis_path
+      end
+    else
+      wiki_path
+    end
   end
-
+#
   def new
     @wiki = Wiki.new
     authorize @wiki
   end  
 
   def create
-    @wiki = Wiki.new(params.require(:wiki).permit(:title, :body, :private))
+    @wiki = Wiki.new(wiki_params)
     @wiki.user = current_user
-    authorize @wiki
+
     if @wiki.save
       flash[:notice] = "Your Wiki was successfully saved."
       redirect_to @wiki
@@ -30,15 +42,18 @@ class WikisController < ApplicationController
 
   def edit
     @wiki = Wiki.find(params[:id])
+    @user = User.all
   end
-
+#
   def update
     @wiki = Wiki.find(params[:id])
-    if @wiki.update_attributes(params.require(:wiki).permit(:title, :body))
-      flash[:notice] = "Your wiki was successfully updated."]
+    @wiki.assign_attributes(wiki_params)
+
+    if @wiki.save
+      flash[:notice] = "Your wiki was successfully updated."
       redirect_to @wiki
     else
-      flash[:alert] = "There was an error updating your wiki. Please try again."
+      flash.now[:alert] = "There was an error updating your wiki. Please try again."
       render :edit
     end  
   end
@@ -58,12 +73,5 @@ class WikisController < ApplicationController
   def wiki_params
     params.require(:wiki).permit(:title, :body, :private)
   end
-
-  def authorize_user
-    wiki = Wiki.find(params[:id])
-    unless current_user == wiki.user || current_user.admin?
-      flash[:alert] = "You can only edit public wiki pages or your own wiki page."
-      redirect_to [wiki, wiki]
-    end
-  end
+  
 end

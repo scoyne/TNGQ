@@ -63,3 +63,14 @@ source 'https://rubygems.org'
 # Use Faker for generating seed
   gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
   
+# Use Stripe to process payments for premium upgrade payments
+  gem 'stripe'
+
+# Use Figaro to store environmental variables
+  gem 'figaro'
+
+# Use Pusher to generate a ruby interface to pusher http api for figaro
+  gem 'pusher'
+
+# Use RedCarpet for markdown
+  gem 'redcarpet'

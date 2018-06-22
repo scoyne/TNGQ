@@ -1,17 +1,13 @@
 class CollaboratorsController < ApplicationController
-    before_action :require_sign_in
+    before_action :set_wiki
 
     def new
-        @wiki = Wiki.find(params[:wiki_id])
-        @collaborator = @wiki.collaborators.new
-        authorize @collaborator
+       @collaborator = Collaborator.new
     end
 
     def create
-        @wiki = Wiki.find(params[:wiki_id])
-        @collaborator = Collaborator.new(params.require(:collaborator).permit(:user_id))
-        @collaborator.wiki = @wiki
-        authorize @collaborator
+        @collaborator = Collaborator.new(wiki_id: @wiki_id, user_id: params[:user_id])
+        
         if @collaborator.save
             flash[:notice] = "Collaborator added successfuly."
             redirect_to edit_wiki_path(@collaborator.wiki)
@@ -22,13 +18,20 @@ class CollaboratorsController < ApplicationController
     end
 
     def destroy
-        @wiki = Wiki.find(params[:wiki_id])
         @collaborator = Collaborator.find(params[:id])
+
         if @collaborator.destroy
             flash[:notice] = "\"#{collaborator.user.email}\" is no longer collaborating."
+            redirect_to @wiki
         else
             flash[:alert] = "Something went wrong. Collaborator was not deleted."
+            render :show
         end
-        redirect to edit_wiki_path(@wiki)
+    end
+
+
+    private
+    def set_wiki
+        @wiki = Wiki.find(params[:wiki_id])
     end
  end

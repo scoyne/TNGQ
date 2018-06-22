@@ -9,7 +9,7 @@
                 <%= f.label :body %>
                 <%= f.text_area :body, rows: 8, class: 'form-control', placeholder: "Enter wiki body" %>
             </div>
-            <% if current_user.role == 'admin' || current_user.rolde == 'premium' %>
+            <% if current_user.role == 'admin' || current_user.role == 'premium' %>
                 <div class="form-group">
                     <%= f.label :private, class: 'checkbox' do %>
                         <%= f.check_box :private %> Private wiki
@@ -21,5 +21,4 @@
             </div>
         <% end %>
     </div>
-
 </div>

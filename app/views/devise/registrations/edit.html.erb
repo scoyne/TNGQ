@@ -1,4 +1,8 @@
-<h2>BoomEdit <%= resource_name.to_s.humanize %></h2>
+<h2>Account Status: <%= current_user.role.capitalize %> <%= resource_name.to_s.humanize %></h2>
+
+<% if current_user.standard? %>
+  <%= button_to "Upgrade", charges_path, class: 'btn btn-success' %>
+<% end %>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
@@ -41,6 +45,13 @@
     <% else %>
       <%= link_to "Downgrade to Standard", edit_user_registration_path %>
     <% end %>
+
+  <h3>Change My Account</h3>
+
+    <% if current_user.premium? %>
+      <%= link_to "Downgrade", downgrade_user_path(current_user),data: { confirm: "Downgrading your account will turn your Private Wikis Public.  Are you sure you wish to continue?" }, class: 'btn btn-warning' %>
+    <% end %>
+
 
 <h3>Cancel my account</h3>
 

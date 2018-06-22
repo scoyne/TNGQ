@@ -20,7 +20,8 @@ require 'faker'
         wiki = Wiki.create!(
             user: users.sample,
             title:      Faker::NewGirl.character,
-            body:       Faker::NewGirl.quote
+            body:       Faker::NewGirl.quote,
+            private:    false
         )
     end
     wikis = Wiki.all
@@ -33,6 +34,12 @@ require 'faker'
 
     premium = User.create!(
         email:      'premium@example.com',
+        password:   'helloworld',
+        role:       'premium'
+    ) 
+
+    premium2 = User.create!(
+        email:      'premium2@example.com',
         password:   'helloworld',
         role:       'premium'
     ) 
