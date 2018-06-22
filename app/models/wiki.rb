@@ -5,12 +5,6 @@ class Wiki < ApplicationRecord
 
   default_scope { order('created_at DESC') }
 
-  scope :visible_to, -> (user) { user && ((user.role == 'premium') || (user.role == 'admin')) ? all : where("private = ? OR private IS NULL",  false)}
-  
- # def collaborator_for(user)
- #   collaborators.where(user: user).first
- # end
-
   def public?
     self.private != true
   end

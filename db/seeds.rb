@@ -38,6 +38,12 @@ require 'faker'
         role:       'premium'
     ) 
 
+    premium2 = User.create!(
+        email:      'premium2@example.com',
+        password:   'helloworld',
+        role:       'premium'
+    ) 
+
     standard = User.create!(
         email:      'standard@example.com',
         password:   'helloworld',

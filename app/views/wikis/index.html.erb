@@ -1,9 +1,7 @@
-<h1>All Wikis   
-    <% if policy(Wiki.new).create? %>
-        <%= link_to "New Wiki", new_wiki_path, class: "btn btn-success" %>
-    <% end %>
+<h1>All Wikis  
+    <%= link_to "New Wiki", new_wiki_path, class: "btn btn-primary" %>
 </h1>
-<% @wiki.each do |wiki| %>
+<% @wikis.each do |wiki| %>
     <div class="media">
         <div class="media-body">
             <h4 class="media-heading">

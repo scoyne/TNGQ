@@ -1,19 +1,33 @@
 class WikisController < ApplicationController
+  before_action :authenticate_user!
 
   def index
-    @wiki = policy_scope(Wiki)
+    @wikis = WikiPolicy::Scope.new(current_user, Wiki).resolve
   end
-
+#
   def show
     @wiki = Wiki.find(params[:id])
+    if @wiki.private?
+      if @wiki.user == current_user
+        wiki_path
+      elsif current_user.standard?
+        flash[:alert] = "You must be a premium user to view private wikis."
+        redirect_to new_charge_path
+      elsif @wiki.users.exclude?(current_user)
+        flash[:alert] = "You must be a collaborator to view that wiki."
+        redirect_to wikis_path
+      end
+    else
+      wiki_path
+    end
   end
-
+#
   def new
     @wiki = Wiki.new
-  end  
+  end
 
   def create
-    @wiki = Wiki.new(params.require(:wiki).permit(:title, :body, :private))
+    @wiki = Wiki.new(wiki_params)
     @wiki.user = current_user
 
     if @wiki.save
@@ -29,16 +43,16 @@ class WikisController < ApplicationController
     @wiki = Wiki.find(params[:id])
     @user = User.all
   end
-
+#
   def update
     @wiki = Wiki.find(params[:id])
-    authorize @wiki
-    
-    if @wiki.update_attributes(params.require(:wiki).permit(:title, :body))
+    @wiki.assign_attributes(wiki_params)
+
+    if @wiki.save
       flash[:notice] = "Your wiki was successfully updated."
       redirect_to @wiki
     else
-      flash[:alert] = "There was an error updating your wiki. Please try again."
+      flash.now[:alert] = "There was an error updating your wiki. Please try again."
       render :edit
     end  
   end
@@ -59,4 +73,5 @@ class WikisController < ApplicationController
   def wiki_params
     params.require(:wiki).permit(:title, :body, :private)
   end
+  
 end
