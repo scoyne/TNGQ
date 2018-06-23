@@ -31196,3 +31196,1262 @@ Completed 200 OK in 49ms (Views: 40.2ms | ActiveRecord: 1.1ms)
 
 
 >>>>>>> user-story-9-markdown
+Started GET "/wikis/94/edit" for 127.0.0.1 at 2018-06-22 18:36:26 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"94"}
+Completed 401 Unauthorized in 17ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-06-22 18:36:27 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (1.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (22.3ms)
+Completed 200 OK in 358ms (Views: 338.9ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-06-22 18:36:40 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hRIEAPkCYFMFBQikExk1Cx+bfbZlWl2DKJeeeXhzhkVJ2Z5Jp+Gcgc1hdjomGkG6QVAQcjBuc0hBQIZhRPB4zw==", "user"=>{"email"=>"premium@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "premium@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2018-06-22 22:36:40.350835"], ["sign_in_count", 2], ["updated_at", "2018-06-22 22:36:40.352895"], ["id", 12]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/wikis/94/edit
+Completed 302 Found in 179ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/wikis/94/edit" for 127.0.0.1 at 2018-06-22 18:36:40 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"94"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.7ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 94], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/_form.html.erb (1.9ms)
+  [1m[36mCollaborator Load (0.5ms)[0m  [1m[34mSELECT "collaborators".* FROM "collaborators" WHERE "collaborators"."wiki_id" = ?[0m  [["wiki_id", 94]]
+  Rendered wikis/edit.html.erb within layouts/application (26.6ms)
+Completed 200 OK in 81ms (Views: 61.4ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/wikis/94/edit" for 127.0.0.1 at 2018-06-23 08:41:14 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"94"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.8ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 94], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/_form.html.erb (1.8ms)
+  [1m[36mCollaborator Load (0.4ms)[0m  [1m[34mSELECT "collaborators".* FROM "collaborators" WHERE "collaborators"."wiki_id" = ?[0m  [["wiki_id", 94]]
+  Rendered wikis/edit.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 103ms (Views: 96.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/wikis/94/edit" for 127.0.0.1 at 2018-06-23 08:41:57 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"94"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.2ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 94], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/_form.html.erb (2.2ms)
+  Rendered wikis/edit.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 63ms (Views: 57.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/wikis/94/edit" for 127.0.0.1 at 2018-06-23 08:43:41 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"94"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.1ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 94], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/_form.html.erb (2.7ms)
+  Rendered wikis/edit.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 59ms (Views: 54.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/wikis/94/edit" for 127.0.0.1 at 2018-06-23 08:48:17 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"94"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.2ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 94], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/_form.html.erb (2.1ms)
+  [1m[36mCollaborator Load (0.2ms)[0m  [1m[34mSELECT "collaborators".* FROM "collaborators" WHERE "collaborators"."wiki_id" = ?[0m  [["wiki_id", 94]]
+  Rendered wikis/edit.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 77ms (Views: 71.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/wikis/94/edit" for 127.0.0.1 at 2018-06-23 08:48:56 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"94"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.2ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 94], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/edit.html.erb within layouts/application (1.6ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.4ms)
+
+
+  
+SyntaxError (/Users/coynes/bloc/code/blocipedia/app/views/wikis/edit.html.erb:56: syntax error, unexpected keyword_ensure, expecting keyword_end
+          ensure
+                ^
+/Users/coynes/bloc/code/blocipedia/app/views/wikis/edit.html.erb:58: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/views/wikis/edit.html.erb:56: syntax error, unexpected keyword_ensure, expecting keyword_end
+app/views/wikis/edit.html.erb:58: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/wikis/94/edit" for 127.0.0.1 at 2018-06-23 08:50:20 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"94"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.5ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 94], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/_form.html.erb (3.0ms)
+  [1m[36mCollaborator Load (0.2ms)[0m  [1m[34mSELECT "collaborators".* FROM "collaborators" WHERE "collaborators"."wiki_id" = ?[0m  [["wiki_id", 94]]
+  Rendered wikis/edit.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 71ms (Views: 64.1ms | ActiveRecord: 1.1ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-06-23 08:50:30 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"I5o0zBMiw7cVJ7DIgjI9C6vtCdFxNw4wXuGjQ1LSDU24LqU0xIOZ8F65pCRqBGWYels/veAxVrMUd2HKuKdT6A=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 10ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-23 08:50:30 -0400
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 53ms (Views: 49.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-06-23 08:50:33 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (2.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 86ms (Views: 83.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-06-23 08:50:43 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KxflgUpIeDJLaMM1cAjWju4mcIhFhJ76yZsn1HEcKGDEDYQXb0ZveawmR2Ed1Ps8NEp8O1/zgx5+qJPhWB+CNQ==", "user"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2018-06-23 12:50:43.655422"], ["last_sign_in_at", "2018-06-23 12:50:43.655422"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", "2018-06-23 12:50:43.656220"], ["id", 11]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 174ms (ActiveRecord: 4.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-23 08:50:43 -0400
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Completed 200 OK in 53ms (Views: 50.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/wikis" for 127.0.0.1 at 2018-06-23 08:50:46 -0400
+Processing by WikisController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering wikis/index.html.erb within layouts/application
+  [1m[36mWiki Load (1.7ms)[0m  [1m[34mSELECT "wikis".* FROM "wikis" ORDER BY created_at DESC[0m
+  Rendered wikis/index.html.erb within layouts/application (17.8ms)
+Completed 200 OK in 90ms (Views: 76.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/wikis/102" for 127.0.0.1 at 2018-06-23 08:50:49 -0400
+Processing by WikisController#show as HTML
+  Parameters: {"id"=>"102"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.3ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering wikis/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mCollaborator Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "collaborators" WHERE "collaborators"."wiki_id" = 102 LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered wikis/show.html.erb within layouts/application (43.3ms)
+Completed 200 OK in 109ms (Views: 98.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/wikis/101" for 127.0.0.1 at 2018-06-23 08:50:53 -0400
+Processing by WikisController#show as HTML
+  Parameters: {"id"=>"101"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.3ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "collaborators" ON "users"."id" = "collaborators"."user_id" WHERE "collaborators"."wiki_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["wiki_id", 101], ["id", 11], ["LIMIT", 1]]
+Redirected to http://localhost:3000/wikis
+Completed 302 Found in 30ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/wikis" for 127.0.0.1 at 2018-06-23 08:50:53 -0400
+Processing by WikisController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering wikis/index.html.erb within layouts/application
+  [1m[36mWiki Load (0.5ms)[0m  [1m[34mSELECT "wikis".* FROM "wikis" ORDER BY created_at DESC[0m
+  Rendered wikis/index.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 61ms (Views: 55.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/wikis/101" for 127.0.0.1 at 2018-06-23 08:50:56 -0400
+Processing by WikisController#show as HTML
+  Parameters: {"id"=>"101"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.2ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "collaborators" ON "users"."id" = "collaborators"."user_id" WHERE "collaborators"."wiki_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["wiki_id", 101], ["id", 11], ["LIMIT", 1]]
+Redirected to http://localhost:3000/wikis
+Completed 302 Found in 10ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/wikis" for 127.0.0.1 at 2018-06-23 08:50:56 -0400
+Processing by WikisController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering wikis/index.html.erb within layouts/application
+  [1m[36mWiki Load (0.9ms)[0m  [1m[34mSELECT "wikis".* FROM "wikis" ORDER BY created_at DESC[0m
+  Rendered wikis/index.html.erb within layouts/application (14.4ms)
+Completed 200 OK in 72ms (Views: 62.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/wikis/101" for 127.0.0.1 at 2018-06-23 08:50:59 -0400
+Processing by WikisController#show as HTML
+  Parameters: {"id"=>"101"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.4ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "collaborators" ON "users"."id" = "collaborators"."user_id" WHERE "collaborators"."wiki_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["wiki_id", 101], ["id", 11], ["LIMIT", 1]]
+Redirected to http://localhost:3000/wikis
+Completed 302 Found in 14ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/wikis" for 127.0.0.1 at 2018-06-23 08:50:59 -0400
+Processing by WikisController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering wikis/index.html.erb within layouts/application
+  [1m[36mWiki Load (0.6ms)[0m  [1m[34mSELECT "wikis".* FROM "wikis" ORDER BY created_at DESC[0m
+  Rendered wikis/index.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 66ms (Views: 57.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/wikis/100" for 127.0.0.1 at 2018-06-23 08:51:01 -0400
+Processing by WikisController#show as HTML
+  Parameters: {"id"=>"100"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.2ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 100], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "collaborators" ON "users"."id" = "collaborators"."user_id" WHERE "collaborators"."wiki_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["wiki_id", 100], ["id", 11], ["LIMIT", 1]]
+Redirected to http://localhost:3000/wikis
+Completed 302 Found in 9ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/wikis" for 127.0.0.1 at 2018-06-23 08:51:01 -0400
+Processing by WikisController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering wikis/index.html.erb within layouts/application
+  [1m[36mWiki Load (0.5ms)[0m  [1m[34mSELECT "wikis".* FROM "wikis" ORDER BY created_at DESC[0m
+  Rendered wikis/index.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 58ms (Views: 53.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/wikis/102" for 127.0.0.1 at 2018-06-23 08:51:07 -0400
+Processing by WikisController#show as HTML
+  Parameters: {"id"=>"102"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.4ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering wikis/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mCollaborator Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "collaborators" WHERE "collaborators"."wiki_id" = 102 LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered wikis/show.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 84ms (Views: 71.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/wikis/102/edit" for 127.0.0.1 at 2018-06-23 08:51:11 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"102"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.2ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/_form.html.erb (3.7ms)
+  [1m[36mCollaborator Load (0.2ms)[0m  [1m[34mSELECT "collaborators".* FROM "collaborators" WHERE "collaborators"."wiki_id" = ?[0m  [["wiki_id", 102]]
+  Rendered wikis/edit.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 62ms (Views: 54.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/wikis/101" for 127.0.0.1 at 2018-06-23 08:51:19 -0400
+Processing by WikisController#show as HTML
+  Parameters: {"id"=>"101"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.4ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "collaborators" ON "users"."id" = "collaborators"."user_id" WHERE "collaborators"."wiki_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["wiki_id", 101], ["id", 11], ["LIMIT", 1]]
+Redirected to http://localhost:3000/wikis
+Completed 302 Found in 11ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/wikis" for 127.0.0.1 at 2018-06-23 08:51:19 -0400
+Processing by WikisController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering wikis/index.html.erb within layouts/application
+  [1m[36mWiki Load (0.6ms)[0m  [1m[34mSELECT "wikis".* FROM "wikis" ORDER BY created_at DESC[0m
+  Rendered wikis/index.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 59ms (Views: 51.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/wikis" for 127.0.0.1 at 2018-06-23 08:51:43 -0400
+Processing by WikisController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering wikis/index.html.erb within layouts/application
+  [1m[36mWiki Load (0.6ms)[0m  [1m[34mSELECT "wikis".* FROM "wikis" ORDER BY created_at DESC[0m
+  Rendered wikis/index.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 77ms (Views: 72.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/wikis/101" for 127.0.0.1 at 2018-06-23 08:51:46 -0400
+Processing by WikisController#show as HTML
+  Parameters: {"id"=>"101"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.2ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "collaborators" ON "users"."id" = "collaborators"."user_id" WHERE "collaborators"."wiki_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["wiki_id", 101], ["id", 11], ["LIMIT", 1]]
+Redirected to http://localhost:3000/wikis
+Completed 302 Found in 9ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/wikis" for 127.0.0.1 at 2018-06-23 08:51:47 -0400
+Processing by WikisController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering wikis/index.html.erb within layouts/application
+  [1m[36mWiki Load (0.7ms)[0m  [1m[34mSELECT "wikis".* FROM "wikis" ORDER BY created_at DESC[0m
+  Rendered wikis/index.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 70ms (Views: 61.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/wikis/102" for 127.0.0.1 at 2018-06-23 08:51:48 -0400
+Processing by WikisController#show as HTML
+  Parameters: {"id"=>"102"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.3ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering wikis/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mCollaborator Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "collaborators" WHERE "collaborators"."wiki_id" = 102 LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered wikis/show.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 50ms (Views: 41.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/wikis/102/edit" for 127.0.0.1 at 2018-06-23 08:51:49 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"102"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.2ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/_form.html.erb (2.7ms)
+  [1m[36mCollaborator Load (0.2ms)[0m  [1m[34mSELECT "collaborators".* FROM "collaborators" WHERE "collaborators"."wiki_id" = ?[0m  [["wiki_id", 102]]
+  Rendered wikis/edit.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 57ms (Views: 48.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/wikis" for 127.0.0.1 at 2018-06-23 08:51:59 -0400
+Processing by WikisController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering wikis/index.html.erb within layouts/application
+  [1m[36mWiki Load (2.2ms)[0m  [1m[34mSELECT "wikis".* FROM "wikis" ORDER BY created_at DESC[0m
+  Rendered wikis/index.html.erb within layouts/application (19.3ms)
+Completed 200 OK in 75ms (Views: 64.9ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/wikis/new" for 127.0.0.1 at 2018-06-23 08:52:01 -0400
+Processing by WikisController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Redirected to http://localhost:3000/wikis
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/wikis" for 127.0.0.1 at 2018-06-23 08:52:01 -0400
+Processing by WikisController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering wikis/index.html.erb within layouts/application
+  [1m[36mWiki Load (0.6ms)[0m  [1m[34mSELECT "wikis".* FROM "wikis" ORDER BY created_at DESC[0m
+  Rendered wikis/index.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 66ms (Views: 58.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/wikis/new" for 127.0.0.1 at 2018-06-23 08:52:08 -0400
+Processing by WikisController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Redirected to http://localhost:3000/wikis
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/wikis" for 127.0.0.1 at 2018-06-23 08:52:08 -0400
+Processing by WikisController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering wikis/index.html.erb within layouts/application
+  [1m[36mWiki Load (1.4ms)[0m  [1m[34mSELECT "wikis".* FROM "wikis" ORDER BY created_at DESC[0m
+  Rendered wikis/index.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 71ms (Views: 61.4ms | ActiveRecord: 1.8ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-06-23 08:52:09 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"9HhgDiMniVqGgS78ZtK1td4La4zKi/JJmK/8wmOszTNuTDeei9zXr7y1Bu4CLnfptvoRVYkECjbehuXUaPtmHg=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-23 08:52:09 -0400
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 54ms (Views: 49.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-06-23 08:52:59 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (1.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 63ms (Views: 61.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-06-23 08:53:09 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"h42Wz1NBwFrdxqJWRvyxotRdgGsbDWZewY3zpXs0cNbN5ke6+nZ+7W0/mrM/B11p4yU7WXwK7EuSpNG/6E7fdg==", "user"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2018-06-23 12:53:09.295679"], ["sign_in_count", 2], ["updated_at", "2018-06-23 12:53:09.296522"], ["id", 11]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 170ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-23 08:53:09 -0400
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Completed 200 OK in 46ms (Views: 42.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/wikis" for 127.0.0.1 at 2018-06-23 08:53:12 -0400
+Processing by WikisController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering wikis/index.html.erb within layouts/application
+  [1m[36mWiki Load (1.0ms)[0m  [1m[34mSELECT "wikis".* FROM "wikis" ORDER BY created_at DESC[0m
+  Rendered wikis/index.html.erb within layouts/application (13.8ms)
+Completed 200 OK in 71ms (Views: 64.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/wikis/101" for 127.0.0.1 at 2018-06-23 08:53:14 -0400
+Processing by WikisController#show as HTML
+  Parameters: {"id"=>"101"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.2ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "collaborators" ON "users"."id" = "collaborators"."user_id" WHERE "collaborators"."wiki_id" = ? AND "users"."id" = ? LIMIT ?[0m  [["wiki_id", 101], ["id", 11], ["LIMIT", 1]]
+Redirected to http://localhost:3000/wikis
+Completed 302 Found in 18ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/wikis" for 127.0.0.1 at 2018-06-23 08:53:14 -0400
+Processing by WikisController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering wikis/index.html.erb within layouts/application
+  [1m[36mWiki Load (0.6ms)[0m  [1m[34mSELECT "wikis".* FROM "wikis" ORDER BY created_at DESC[0m
+  Rendered wikis/index.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 50ms (Views: 42.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/wikis/102" for 127.0.0.1 at 2018-06-23 08:53:15 -0400
+Processing by WikisController#show as HTML
+  Parameters: {"id"=>"102"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.5ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering wikis/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mCollaborator Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "collaborators" WHERE "collaborators"."wiki_id" = 102 LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered wikis/show.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 62ms (Views: 52.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/wikis/102/edit" for 127.0.0.1 at 2018-06-23 08:53:16 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"102"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.2ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/_form.html.erb (4.1ms)
+  [1m[36mCollaborator Load (0.2ms)[0m  [1m[34mSELECT "collaborators".* FROM "collaborators" WHERE "collaborators"."wiki_id" = ?[0m  [["wiki_id", 102]]
+  Rendered wikis/edit.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 56ms (Views: 49.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/wikis/102/edit" for 127.0.0.1 at 2018-06-23 08:56:57 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"102"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.2ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/_form.html.erb (2.3ms)
+  Rendered wikis/edit.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 51ms (Views: 45.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/wikis/102/edit" for 127.0.0.1 at 2018-06-23 08:57:01 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"102"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.2ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/_form.html.erb (1.7ms)
+  Rendered wikis/edit.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 49ms (Views: 44.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/wikis/102/edit" for 127.0.0.1 at 2018-06-23 08:57:06 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"102"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.2ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/_form.html.erb (1.8ms)
+  Rendered wikis/edit.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 44ms (Views: 39.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/wikis" for 127.0.0.1 at 2018-06-23 08:57:22 -0400
+Processing by WikisController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering wikis/index.html.erb within layouts/application
+  [1m[36mWiki Load (0.5ms)[0m  [1m[34mSELECT "wikis".* FROM "wikis" ORDER BY created_at DESC[0m
+  Rendered wikis/index.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 61ms (Views: 56.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/wikis/102" for 127.0.0.1 at 2018-06-23 08:57:24 -0400
+Processing by WikisController#show as HTML
+  Parameters: {"id"=>"102"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.2ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering wikis/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mCollaborator Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "collaborators" WHERE "collaborators"."wiki_id" = 102 LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered wikis/show.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 57ms (Views: 49.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/wikis/102/edit" for 127.0.0.1 at 2018-06-23 08:57:26 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"102"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.3ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/_form.html.erb (3.3ms)
+  Rendered wikis/edit.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 60ms (Views: 51.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/wikis/102/edit" for 127.0.0.1 at 2018-06-23 08:58:10 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"102"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.2ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/_form.html.erb (2.0ms)
+  Rendered wikis/edit.html.erb within layouts/application (14.2ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `rold' for #<User:0x007fdd248721d0>
+Did you mean?  role):
+    2:   <div class="row">
+    3:     <div class="col-md-8">
+    4:       <% render partial: 'form', locals: {wiki: @wiki} %>
+    5:       <% if current_user.role == 'premium' || current_user.rold == 'admin' %>
+    6:         <div class="col-md-4">
+    7:           <h4>Collaborator Management</h4>
+    8:             <ul>
+  
+app/views/wikis/edit.html.erb:5:in `_app_views_wikis_edit_html_erb___1125877372424121753_70293851616000'
+Started GET "/wikis/102/edit" for 127.0.0.1 at 2018-06-23 08:58:31 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"102"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.2ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/_form.html.erb (2.5ms)
+  Rendered wikis/edit.html.erb within layouts/application (15.3ms)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `rold' for #<User:0x007fdd26002e30>
+Did you mean?  role):
+    2:   <div class="row">
+    3:     <div class="col-md-8">
+    4:       <% render partial: 'form', locals: {wiki: @wiki} %>
+    5:       <% if current_user.role == 'premium' || current_user.rold == 'admin' %>
+    6:         <div class="col-md-4">
+    7:           <h4>Collaborator Management</h4>
+    8:             <ul>
+  
+app/views/wikis/edit.html.erb:5:in `_app_views_wikis_edit_html_erb___1125877372424121753_70293869462700'
+Started GET "/wikis/102/edit" for 127.0.0.1 at 2018-06-23 08:58:34 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"102"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.2ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/_form.html.erb (1.8ms)
+  Rendered wikis/edit.html.erb within layouts/application (13.1ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `rold' for #<User:0x007fdd262b2900>
+Did you mean?  role):
+    2:   <div class="row">
+    3:     <div class="col-md-8">
+    4:       <% render partial: 'form', locals: {wiki: @wiki} %>
+    5:       <% if current_user.role == 'premium' || current_user.rold == 'admin' %>
+    6:         <div class="col-md-4">
+    7:           <h4>Collaborator Management</h4>
+    8:             <ul>
+  
+app/views/wikis/edit.html.erb:5:in `_app_views_wikis_edit_html_erb___1125877372424121753_70293902411020'
+Started GET "/wikis/102/edit" for 127.0.0.1 at 2018-06-23 08:59:00 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"102"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.2ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/_form.html.erb (1.9ms)
+  [1m[36mCollaborator Load (0.2ms)[0m  [1m[34mSELECT "collaborators".* FROM "collaborators" WHERE "collaborators"."wiki_id" = ?[0m  [["wiki_id", 102]]
+  Rendered wikis/_form.html.erb (1.5ms)
+  Rendered wikis/edit.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 61ms (Views: 55.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/wikis/102/edit" for 127.0.0.1 at 2018-06-23 09:01:04 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"102"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.2ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/_form.html.erb (2.2ms)
+  [1m[36mCollaborator Load (0.2ms)[0m  [1m[34mSELECT "collaborators".* FROM "collaborators" WHERE "collaborators"."wiki_id" = ?[0m  [["wiki_id", 102]]
+  Rendered wikis/_form.html.erb (1.4ms)
+  Rendered wikis/edit.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 64ms (Views: 59.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/wikis/102/edit" for 127.0.0.1 at 2018-06-23 09:01:06 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"102"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.2ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/_form.html.erb (1.6ms)
+  [1m[36mCollaborator Load (0.3ms)[0m  [1m[34mSELECT "collaborators".* FROM "collaborators" WHERE "collaborators"."wiki_id" = ?[0m  [["wiki_id", 102]]
+  Rendered wikis/_form.html.erb (1.2ms)
+  Rendered wikis/edit.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 61ms (Views: 56.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/wikis/102/edit" for 127.0.0.1 at 2018-06-23 09:01:53 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"102"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.1ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/_form.html.erb (2.0ms)
+  [1m[36mCollaborator Load (0.2ms)[0m  [1m[34mSELECT "collaborators".* FROM "collaborators" WHERE "collaborators"."wiki_id" = ?[0m  [["wiki_id", 102]]
+  Rendered wikis/_form.html.erb (1.2ms)
+  Rendered wikis/edit.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 57ms (Views: 51.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/wikis/102/edit" for 127.0.0.1 at 2018-06-23 09:02:15 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"102"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.1ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/_form.html.erb (1.8ms)
+  [1m[36mCollaborator Load (0.2ms)[0m  [1m[34mSELECT "collaborators".* FROM "collaborators" WHERE "collaborators"."wiki_id" = ?[0m  [["wiki_id", 102]]
+  Rendered wikis/_form.html.erb (1.0ms)
+  Rendered wikis/edit.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 51ms (Views: 46.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/wikis/102/edit" for 127.0.0.1 at 2018-06-23 09:04:54 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"102"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.2ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/_form.html.erb (2.1ms)
+  Rendered wikis/_form.html.erb (2.2ms)
+  [1m[36mCollaborator Load (0.3ms)[0m  [1m[34mSELECT "collaborators".* FROM "collaborators" WHERE "collaborators"."wiki_id" = ?[0m  [["wiki_id", 102]]
+  Rendered wikis/_form.html.erb (1.8ms)
+  Rendered wikis/edit.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 73ms (Views: 67.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/wikis/102/edit" for 127.0.0.1 at 2018-06-23 09:05:17 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"102"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.4ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/_form.html.erb (3.7ms)
+  Rendered wikis/_form.html.erb (1.4ms)
+  [1m[36mCollaborator Load (0.2ms)[0m  [1m[34mSELECT "collaborators".* FROM "collaborators" WHERE "collaborators"."wiki_id" = ?[0m  [["wiki_id", 102]]
+  Rendered wikis/_form.html.erb (1.2ms)
+  Rendered wikis/edit.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 66ms (Views: 59.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/wikis/102/edit" for 127.0.0.1 at 2018-06-23 09:05:55 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"102"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.2ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/_form.html.erb (2.0ms)
+  Rendered wikis/_form.html.erb (1.2ms)
+  [1m[36mCollaborator Load (0.3ms)[0m  [1m[34mSELECT "collaborators".* FROM "collaborators" WHERE "collaborators"."wiki_id" = ?[0m  [["wiki_id", 102]]
+  Rendered wikis/_form.html.erb (1.2ms)
+  Rendered wikis/edit.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 57ms (Views: 51.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/wikis/102/edit" for 127.0.0.1 at 2018-06-23 09:06:37 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"102"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.2ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/_form.html.erb (1.7ms)
+  [1m[36mCollaborator Load (0.2ms)[0m  [1m[34mSELECT "collaborators".* FROM "collaborators" WHERE "collaborators"."wiki_id" = ?[0m  [["wiki_id", 102]]
+  Rendered wikis/_form.html.erb (1.6ms)
+  Rendered wikis/edit.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 54ms (Views: 48.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/wikis/102/edit" for 127.0.0.1 at 2018-06-23 09:06:40 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"102"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.1ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/_form.html.erb (1.8ms)
+  [1m[36mCollaborator Load (0.2ms)[0m  [1m[34mSELECT "collaborators".* FROM "collaborators" WHERE "collaborators"."wiki_id" = ?[0m  [["wiki_id", 102]]
+  Rendered wikis/_form.html.erb (1.0ms)
+  Rendered wikis/edit.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 49ms (Views: 43.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/wikis/102/edit" for 127.0.0.1 at 2018-06-23 09:06:42 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"102"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.1ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/_form.html.erb (1.9ms)
+  [1m[36mCollaborator Load (0.2ms)[0m  [1m[34mSELECT "collaborators".* FROM "collaborators" WHERE "collaborators"."wiki_id" = ?[0m  [["wiki_id", 102]]
+  Rendered wikis/_form.html.erb (1.5ms)
+  Rendered wikis/edit.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 55ms (Views: 50.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/wikis/102/edit" for 127.0.0.1 at 2018-06-23 09:07:53 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"102"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.2ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/_form.html.erb (2.1ms)
+  [1m[36mCollaborator Load (0.2ms)[0m  [1m[34mSELECT "collaborators".* FROM "collaborators" WHERE "collaborators"."wiki_id" = ?[0m  [["wiki_id", 102]]
+  Rendered wikis/_form.html.erb (1.2ms)
+  Rendered wikis/edit.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 56ms (Views: 50.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/wikis/102/edit" for 127.0.0.1 at 2018-06-23 09:08:07 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"102"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.4ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/_form.html.erb (2.0ms)
+  [1m[36mCollaborator Load (0.2ms)[0m  [1m[34mSELECT "collaborators".* FROM "collaborators" WHERE "collaborators"."wiki_id" = ?[0m  [["wiki_id", 102]]
+  Rendered wikis/_form.html.erb (1.3ms)
+  Rendered wikis/edit.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 60ms (Views: 54.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/wikis/102/edit" for 127.0.0.1 at 2018-06-23 09:08:39 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"102"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.2ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/_form.html.erb (2.0ms)
+  [1m[36mCollaborator Load (0.3ms)[0m  [1m[34mSELECT "collaborators".* FROM "collaborators" WHERE "collaborators"."wiki_id" = ?[0m  [["wiki_id", 102]]
+  Rendered wikis/_form.html.erb (1.6ms)
+  Rendered wikis/edit.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 60ms (Views: 54.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/wikis/102/edit" for 127.0.0.1 at 2018-06-23 09:09:52 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"102"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.2ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/_form.html.erb (1.8ms)
+  Rendered wikis/_form.html.erb (1.8ms)
+  [1m[36mCollaborator Load (0.3ms)[0m  [1m[34mSELECT "collaborators".* FROM "collaborators" WHERE "collaborators"."wiki_id" = ?[0m  [["wiki_id", 102]]
+  Rendered wikis/edit.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 75ms (Views: 69.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/wikis/102/edit" for 127.0.0.1 at 2018-06-23 09:12:26 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"102"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.2ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/_form.html.erb (1.8ms)
+  Rendered wikis/_form.html.erb (1.1ms)
+  [1m[36mCollaborator Load (0.2ms)[0m  [1m[34mSELECT "collaborators".* FROM "collaborators" WHERE "collaborators"."wiki_id" = ?[0m  [["wiki_id", 102]]
+  Rendered wikis/edit.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 54ms (Views: 48.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/wikis/102/edit" for 127.0.0.1 at 2018-06-23 09:12:32 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"102"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.2ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/_form.html.erb (2.3ms)
+  Rendered wikis/_form.html.erb (1.2ms)
+  [1m[36mCollaborator Load (0.2ms)[0m  [1m[34mSELECT "collaborators".* FROM "collaborators" WHERE "collaborators"."wiki_id" = ?[0m  [["wiki_id", 102]]
+  Rendered wikis/edit.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 51ms (Views: 46.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/wikis/102/edit" for 127.0.0.1 at 2018-06-23 09:12:53 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"102"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.2ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/_form.html.erb (2.6ms)
+  [1m[36mCollaborator Load (0.2ms)[0m  [1m[34mSELECT "collaborators".* FROM "collaborators" WHERE "collaborators"."wiki_id" = ?[0m  [["wiki_id", 102]]
+  Rendered wikis/edit.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 56ms (Views: 50.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/wikis/102/edit" for 127.0.0.1 at 2018-06-23 09:13:09 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"102"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.2ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/_form.html.erb (2.0ms)
+  [1m[36mCollaborator Load (0.2ms)[0m  [1m[34mSELECT "collaborators".* FROM "collaborators" WHERE "collaborators"."wiki_id" = ?[0m  [["wiki_id", 102]]
+  Rendered wikis/edit.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 53ms (Views: 47.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/wikis/102/edit" for 127.0.0.1 at 2018-06-23 09:13:42 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"102"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.2ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/_form.html.erb (2.4ms)
+  [1m[36mCollaborator Load (0.2ms)[0m  [1m[34mSELECT "collaborators".* FROM "collaborators" WHERE "collaborators"."wiki_id" = ?[0m  [["wiki_id", 102]]
+  Rendered wikis/edit.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 59ms (Views: 53.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/wikis/102/edit" for 127.0.0.1 at 2018-06-23 09:14:25 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"102"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.2ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/_form.html.erb (1.8ms)
+  [1m[36mCollaborator Load (0.2ms)[0m  [1m[34mSELECT "collaborators".* FROM "collaborators" WHERE "collaborators"."wiki_id" = ?[0m  [["wiki_id", 102]]
+  Rendered wikis/edit.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 54ms (Views: 48.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/wikis/102/edit" for 127.0.0.1 at 2018-06-23 09:15:29 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"102"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.3ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/_form.html.erb (2.6ms)
+  [1m[36mCollaborator Load (0.2ms)[0m  [1m[34mSELECT "collaborators".* FROM "collaborators" WHERE "collaborators"."wiki_id" = ?[0m  [["wiki_id", 102]]
+  Rendered wikis/edit.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 69ms (Views: 62.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/wikis/102/edit" for 127.0.0.1 at 2018-06-23 09:15:32 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"102"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.2ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/_form.html.erb (1.7ms)
+  [1m[36mCollaborator Load (0.2ms)[0m  [1m[34mSELECT "collaborators".* FROM "collaborators" WHERE "collaborators"."wiki_id" = ?[0m  [["wiki_id", 102]]
+  Rendered wikis/edit.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 47ms (Views: 42.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/wikis/102/edit" for 127.0.0.1 at 2018-06-23 09:17:29 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"102"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.3ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/_form.html.erb (2.2ms)
+  [1m[36mCollaborator Load (0.2ms)[0m  [1m[34mSELECT "collaborators".* FROM "collaborators" WHERE "collaborators"."wiki_id" = ?[0m  [["wiki_id", 102]]
+  Rendered wikis/edit.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 58ms (Views: 52.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/wikis/102/edit" for 127.0.0.1 at 2018-06-23 09:17:32 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"102"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.1ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/_form.html.erb (2.8ms)
+  [1m[36mCollaborator Load (0.2ms)[0m  [1m[34mSELECT "collaborators".* FROM "collaborators" WHERE "collaborators"."wiki_id" = ?[0m  [["wiki_id", 102]]
+  Rendered wikis/edit.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 48ms (Views: 43.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/wikis/102/edit" for 127.0.0.1 at 2018-06-23 09:20:42 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"102"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.2ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/_form.html.erb (2.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  Rendered wikis/edit.html.erb within layouts/application (205.3ms)
+Completed 500 Internal Server Error in 218ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `wiki_has_collaborators?' for #<#<Class:0x007fdd24c23bf8>:0x007fdd24da5210>
+Did you mean?  wiki_collaborators_path):
+    17: 
+    18: <!-- ##############  -->
+    19: 
+    20:   <% if wiki_has_collaborators? %>
+    21:     <% @wiki.collaborators.each do |collaborator| %>
+    22:       <span class="glyphicon glyphicon-user"></span>
+    23:       <%= collaborator.user.username %>
+  
+app/views/wikis/edit.html.erb:20:in `_app_views_wikis_edit_html_erb___1125877372424121753_70293891395140'
+Started GET "/wikis/102/edit" for 127.0.0.1 at 2018-06-23 09:21:52 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"102"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.2ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/edit.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.7ms)
+
+
+  
+SyntaxError (/Users/coynes/bloc/code/blocipedia/app/views/wikis/edit.html.erb:52: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+                ^):
+  
+app/views/wikis/edit.html.erb:52: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/wikis/102/edit" for 127.0.0.1 at 2018-06-23 09:22:09 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"102"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.2ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/_form.html.erb (1.8ms)
+  [1m[36mCollaborator Load (0.2ms)[0m  [1m[34mSELECT "collaborators".* FROM "collaborators" WHERE "collaborators"."wiki_id" = ?[0m  [["wiki_id", 102]]
+  Rendered wikis/edit.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 59ms (Views: 52.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/wikis/102/edit" for 127.0.0.1 at 2018-06-23 09:27:07 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"102"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.2ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/_form.html.erb (1.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  Rendered collaborators/_manage_collaborators.html.erb (163.4ms)
+  Rendered wikis/edit.html.erb within layouts/application (169.7ms)
+Completed 500 Internal Server Error in 181ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `wiki_has_collaborators?' for #<#<Class:0x007fdd24c23bf8>:0x007fdd24a3ccb8>
+Did you mean?  wiki_collaborators_path):
+    1: <h3>Collaborators</h3>
+    2: <% if wiki_has_collaborators? %>
+    3:   <% @wiki.collaborators.each do |collaborator| %>
+    4:     <span class="glyphicon glyphicon-user"></span>
+    5:     <%= collaborator.user.username %>
+  
+app/views/collaborators/_manage_collaborators.html.erb:2:in `_app_views_collaborators__manage_collaborators_html_erb___215751563334124962_70293889575280'
+app/views/wikis/edit.html.erb:24:in `_app_views_wikis_edit_html_erb___1125877372424121753_70293889608680'
+Started GET "/wikis/102/edit" for 127.0.0.1 at 2018-06-23 09:33:21 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"102"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.3ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/_form.html.erb (2.3ms)
+  Rendered wikis/edit.html.erb within layouts/application (13.5ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (Missing partial collaborators/_manage_collaborators with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/coynes/bloc/code/blocipedia/app/views"
+  * "/Users/coynes/.rvm/gems/ruby-2.4.1/gems/devise-4.4.3/app/views"
+):
+    21:     <div class="col-md-4">
+    22:         <h4>Collaborators</h4>
+    23:           <ul>
+    24:           <%= render partial: 'collaborators/manage_collaborators', locals: { wiki: @wiki, user: current_user } %>
+    25:           <% @wiki.collaborators.each do |collaborator| %>
+    26:             <li>
+    27:               <%= collaborator.user.email %>
+  
+app/views/wikis/edit.html.erb:24:in `_app_views_wikis_edit_html_erb___1125877372424121753_70293884973760'
+Started GET "/wikis/102/edit" for 127.0.0.1 at 2018-06-23 09:34:04 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"102"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.4ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/_form.html.erb (2.4ms)
+  Rendered wikis/_form.html.erb (2.4ms)
+  [1m[36mCollaborator Load (0.4ms)[0m  [1m[34mSELECT "collaborators".* FROM "collaborators" WHERE "collaborators"."wiki_id" = ?[0m  [["wiki_id", 102]]
+  Rendered wikis/edit.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 70ms (Views: 63.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/wikis/102/edit" for 127.0.0.1 at 2018-06-23 09:35:29 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"102"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.2ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/_form.html.erb (3.1ms)
+  Rendered wikis/_form.html.erb (2.5ms)
+  [1m[36mCollaborator Load (0.2ms)[0m  [1m[34mSELECT "collaborators".* FROM "collaborators" WHERE "collaborators"."wiki_id" = ?[0m  [["wiki_id", 102]]
+  Rendered wikis/edit.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 69ms (Views: 64.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/wikis/102/edit" for 127.0.0.1 at 2018-06-23 09:35:56 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"102"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.2ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/_form.html.erb (1.9ms)
+  Rendered wikis/_form.html.erb (2.1ms)
+  [1m[36mCollaborator Load (0.2ms)[0m  [1m[34mSELECT "collaborators".* FROM "collaborators" WHERE "collaborators"."wiki_id" = ?[0m  [["wiki_id", 102]]
+  Rendered wikis/edit.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 58ms (Views: 52.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/wikis/102/edit" for 127.0.0.1 at 2018-06-23 09:35:58 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"102"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.2ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/_form.html.erb (2.3ms)
+  Rendered wikis/_form.html.erb (1.8ms)
+  [1m[36mCollaborator Load (0.2ms)[0m  [1m[34mSELECT "collaborators".* FROM "collaborators" WHERE "collaborators"."wiki_id" = ?[0m  [["wiki_id", 102]]
+  Rendered wikis/edit.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 51ms (Views: 46.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/wikis/102/edit" for 127.0.0.1 at 2018-06-23 09:36:10 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"102"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.2ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/_form.html.erb (1.9ms)
+  Rendered wikis/_form.html.erb (1.6ms)
+  [1m[36mCollaborator Load (0.2ms)[0m  [1m[34mSELECT "collaborators".* FROM "collaborators" WHERE "collaborators"."wiki_id" = ?[0m  [["wiki_id", 102]]
+  Rendered wikis/edit.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 61ms (Views: 56.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/wikis/102/edit" for 127.0.0.1 at 2018-06-23 09:36:22 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"102"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.2ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/_form.html.erb (2.0ms)
+  Rendered wikis/_form.html.erb (3.5ms)
+  [1m[36mCollaborator Load (0.2ms)[0m  [1m[34mSELECT "collaborators".* FROM "collaborators" WHERE "collaborators"."wiki_id" = ?[0m  [["wiki_id", 102]]
+  Rendered wikis/edit.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 62ms (Views: 57.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/wikis/102/edit" for 127.0.0.1 at 2018-06-23 09:36:32 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"102"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.1ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/_form.html.erb (2.1ms)
+  Rendered wikis/_form.html.erb (1.9ms)
+  [1m[36mCollaborator Load (0.2ms)[0m  [1m[34mSELECT "collaborators".* FROM "collaborators" WHERE "collaborators"."wiki_id" = ?[0m  [["wiki_id", 102]]
+  Rendered wikis/edit.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 72ms (Views: 66.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/wikis/102/edit" for 127.0.0.1 at 2018-06-23 09:36:47 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"102"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.1ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/_form.html.erb (1.7ms)
+  Rendered wikis/_form.html.erb (2.5ms)
+  [1m[36mCollaborator Load (0.2ms)[0m  [1m[34mSELECT "collaborators".* FROM "collaborators" WHERE "collaborators"."wiki_id" = ?[0m  [["wiki_id", 102]]
+  Rendered wikis/edit.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 59ms (Views: 54.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/wikis/102/edit" for 127.0.0.1 at 2018-06-23 09:37:43 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"102"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.2ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/_form.html.erb (1.7ms)
+  Rendered wikis/edit.html.erb within layouts/application (10.3ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (Missing partial collaborators/_new with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/coynes/bloc/code/blocipedia/app/views"
+  * "/Users/coynes/.rvm/gems/ruby-2.4.1/gems/devise-4.4.3/app/views"
+):
+    21:     <div class="col-md-4">
+    22:         <h4>Collaborators</h4>
+    23:           <ul>
+    24:           <%= render partial: 'collaborators/new', locals: { wiki: @wiki, user: current_user } %>
+    25:           <% @wiki.collaborators.each do |collaborator| %>
+    26:             <li>
+    27:               <%= collaborator.user.email %>
+  
+app/views/wikis/edit.html.erb:24:in `_app_views_wikis_edit_html_erb___1125877372424121753_70293901266360'
+Started GET "/wikis/102/edit" for 127.0.0.1 at 2018-06-23 09:38:27 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"102"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.2ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/_form.html.erb (1.9ms)
+  Rendered wikis/_form.html.erb (2.5ms)
+  [1m[36mCollaborator Load (0.2ms)[0m  [1m[34mSELECT "collaborators".* FROM "collaborators" WHERE "collaborators"."wiki_id" = ?[0m  [["wiki_id", 102]]
+  Rendered wikis/edit.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 64ms (Views: 59.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/wikis/102/edit" for 127.0.0.1 at 2018-06-23 09:39:00 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"102"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.2ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/_form.html.erb (1.8ms)
+  Rendered wikis/_form.html.erb (1.7ms)
+  [1m[36mCollaborator Load (0.2ms)[0m  [1m[34mSELECT "collaborators".* FROM "collaborators" WHERE "collaborators"."wiki_id" = ?[0m  [["wiki_id", 102]]
+  Rendered wikis/edit.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 52ms (Views: 46.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/wikis/102/edit" for 127.0.0.1 at 2018-06-23 09:39:03 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"102"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.2ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/_form.html.erb (1.9ms)
+  Rendered wikis/_form.html.erb (1.7ms)
+  [1m[36mCollaborator Load (0.2ms)[0m  [1m[34mSELECT "collaborators".* FROM "collaborators" WHERE "collaborators"."wiki_id" = ?[0m  [["wiki_id", 102]]
+  Rendered wikis/edit.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 53ms (Views: 48.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/wikis/102/edit" for 127.0.0.1 at 2018-06-23 09:41:08 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"102"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.2ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/_form.html.erb (1.9ms)
+  [1m[36mCollaborator Load (0.2ms)[0m  [1m[34mSELECT "collaborators".* FROM "collaborators" WHERE "collaborators"."wiki_id" = ?[0m  [["wiki_id", 102]]
+  Rendered wikis/edit.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 67ms (Views: 58.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/wikis/102" for 127.0.0.1 at 2018-06-23 09:41:11 -0400
+Processing by WikisController#show as HTML
+  Parameters: {"id"=>"102"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.2ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering wikis/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mCollaborator Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "collaborators" WHERE "collaborators"."wiki_id" = 102 LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered wikis/show.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 83ms (Views: 74.9ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/wikis/102/edit" for 127.0.0.1 at 2018-06-23 09:41:16 -0400
+Processing by WikisController#edit as HTML
+  Parameters: {"id"=>"102"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mWiki Load (0.3ms)[0m  [1m[34mSELECT  "wikis".* FROM "wikis" WHERE "wikis"."id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering wikis/edit.html.erb within layouts/application
+  Rendered wikis/_form.html.erb (4.1ms)
+  [1m[36mCollaborator Load (0.2ms)[0m  [1m[34mSELECT "collaborators".* FROM "collaborators" WHERE "collaborators"."wiki_id" = ?[0m  [["wiki_id", 102]]
+  Rendered wikis/edit.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 90ms (Views: 81.8ms | ActiveRecord: 0.9ms)
+
+
