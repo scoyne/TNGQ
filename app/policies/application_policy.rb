@@ -5,25 +5,25 @@ class ApplicationPolicy
     @user = user
     @record = record
   end
-
+#
   def index?
     false
   end
-
+#
   def show?
     scope.where(:id => record.id).exists?
   end
-
+#
   def create?
     false
   end
-
+#
   def new?
     create?
   end
-
+#
   def update?
-    user.present?
+    false
   end
 
   def edit?
@@ -31,7 +31,7 @@ class ApplicationPolicy
   end
 
   def destroy?
-    update?
+    false
   end
 
   def scope

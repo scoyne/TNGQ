@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   has_many :wikis, dependent: :destroy
   has_many :collaborators, dependent: :destroy
-  has_many :wikis, through: :collaborators
+  has_many :wiki_collaborations, through: :collaborators
 
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable
@@ -16,9 +16,9 @@ class User < ApplicationRecord
     self.role ||= :standard # defining the initial / default role 
   end
   
-  def collaborator_for(wiki)
-    collaborators.where(wiki_id: wiki.id).first
-  end
+  # def collaborator_for(wiki)
+  #  collaborators.where(wiki_id: wiki.id).first
+  # end
   
   protected
   def confirmation_required?
