@@ -8,4 +8,5 @@ class ApplicationController < ActionController::Base
     flash[:alert] = "You do not have permissions to perform this action."
     redirect_to(request.referrer || root_path)
   end
+
 end

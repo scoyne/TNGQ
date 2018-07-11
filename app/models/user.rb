@@ -1,7 +1,7 @@
 class User < ApplicationRecord
-  has_many :wikis, dependent: :destroy
+  has_many :wikis
   has_many :collaborators, dependent: :destroy
-  has_many :wiki_collaborations, through: :collaborators
+  has_many :collaboration_wikis, through: :collaborators, source: :wiki
 
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable
@@ -16,6 +16,10 @@ class User < ApplicationRecord
     self.role ||= :standard # defining the initial / default role 
   end
   
+  def name
+    username = self.email.split(/@/).first.humanize.titleize
+  end
+
   # def collaborator_for(wiki)
   #  collaborators.where(wiki_id: wiki.id).first
   # end

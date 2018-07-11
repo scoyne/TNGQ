@@ -28,7 +28,7 @@
         <% end %>
     </div>
 </div>
--->
+#############################
 <h1><%= @wiki.title %></h1>
 
 <div class="row">
@@ -50,4 +50,36 @@
             <%= link_to "Delete Wiki", @wiki, method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure you want to delete this wiki?'} %>
         <% end %>
     </div>
+</div>
+-->
+<h1><%= @wiki.title %></h1>
+
+<div class="row">
+  <div class="col-md-8">
+    <h4><% if @wiki.user.premium? %>
+        <span class='glyphicon glyphicon-star' style="color: #fc0;"></span>
+      <% end %>
+      <% if @wiki.user.admin? %>
+        <span class='glyphicon glyphicon-cog' style="color: #c00;"></span>
+      <% end %>
+      <%= @wiki.user.email %> |
+      <% if @wiki.public %>Public<% else %>Private<% end %>
+      <% if @wiki.user == current_user %> - Owner<% end %></h4>
+      <% if !(Collaborator.where(wiki: @wiki).empty?) %>
+        <p><strong>Collaborators:</strong>
+          <% Collaborator.where(wiki: @wiki).each do |collab| %>
+            <%= User.where(id: collab.user_id).pluck(:email) %>
+          <% end %>
+        </p>
+      <% end %>
+      <hr/>
+      <%= markdown(@wiki.body) %>
+  </div>
+  <div class="col-md-4">
+    <% if policy(@wiki).update? %>
+      <%= link_to "Edit", edit_wiki_path(@wiki), class: 'btn btn-success' %>
+      <%= link_to "Delete Wiki", @wiki, method: :delete, class: 'btn btn-danger',
+        data: {confirm: 'Are you sure you want to delete this Wiki?'} %>
+    <% end %>
+  </div>
 </div>

@@ -36,7 +36,7 @@
     <% end %> 
   </div>
 </div>
--->
+################
 <% if user_is_authorized_to_update? %>
     <h1>Edit Wiki</h1>
 
@@ -75,4 +75,13 @@
         </div>
     </div>
 <% end %>
+-->
+<h1>Edit a Wiki</h1>
+<%= render partial: 'form', locals: { wiki: @wiki }  %>
 
+<% if current_user.premium? && @wiki.user == current_user && !@wiki.public? %>
+    <h4>Add or Remove Collaborators: </h4>
+    <% @users.each do |user| %>
+        <%= render partial: 'collaborators/form', locals: { user: user, wiki: @wiki } %>
+    <% end %>
+<% end %>
