@@ -9,7 +9,7 @@ class WikisController < ApplicationController
 #
   def show
     @wiki = Wiki.find(params[:id])
-    authorize @wiki
+#    authorize @wiki
   end
 #    
 #    if current_user.present? # setting collaborations

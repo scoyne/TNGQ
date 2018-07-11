@@ -43,10 +43,10 @@
             <% end %></p>
     </div>
     <div class="col-md-4">
-        <% if user_is_authorized_to_update? %>
+        <% if user_is_authorized_for_edit? %>
             <%= link_to "Edit", edit_wiki_path(@wiki), class: 'btn btn-success' %>
         <% end %>
-        <%if user_is_authorized_to_delete? %>
+        <%if user_is_authorized_for_deletion? %>
             <%= link_to "Delete Wiki", @wiki, method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure you want to delete this wiki?'} %>
         <% end %>
     </div>
@@ -63,7 +63,7 @@
         <span class='glyphicon glyphicon-cog' style="color: #c00;"></span>
       <% end %>
       <%= @wiki.user.email %> |
-      <% if @wiki.public %>Public<% else %>Private<% end %>
+      <% if @wiki.public? %>Public<% else %>Private<% end %>
       <% if @wiki.user == current_user %> - Owner<% end %></h4>
       <% if !(Collaborator.where(wiki: @wiki).empty?) %>
         <p><strong>Collaborators:</strong>
