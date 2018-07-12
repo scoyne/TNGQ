@@ -1,56 +1,18 @@
-<!--
-<h1>New Wiki</h1>
+<h1>Create a new Wiki</h1>
 <div class="row">
   <div class="col-md-4">
     
     <p>Guidelines for wikis</p>
     <ul>
-      <li>Blocipedia takes advantage of Markdown.</li>
-      <li>Markdown is a plain text formatting syntax for writing.</li>
-      <li>Markdown provides seemless conversion of your writing to HTML.</li>
-      <li>Click the cheatsheet if you need formatting assistance.</li>
+        <li>Blocipedia supports markdown: <strong>**bold**</strong> <em>_italic_</em> <code>`code`</code> >quote &nbsp;  • - bullet list<br/>
+          text links: [link text](link url)<br/></li>
+        <li></li>
+        <li>Markdown is a plain text formatting syntax for writing.</li>
+        <li>Markdown provides seemless conversion of your writing to HTML.</li>
+        <li>Click the cheatsheet if you need formatting assistance.</li>
     </ul>
   </div>
   <div class="col-md-8">
-    <%= render partial: 'form', locals: {wiki: @wiki} %>
-  </div>
+    <%= render partial: 'form', locals: { wiki: @wiki } %>
+    <%= render partial: 'collaborators/form', locals: { collaborator: @wiki.collaborators } %>
 </div>
-
-<% if user_is_authorized_for_creation? %>
-    <h1>New Wiki</h1>
-    <div class="row">
-        <div class="col-md-4">
-            <p>Wiki rules</p>
-            <ul>
-                <li>Don't be a jerk.</li>
-                <li>Make a wiki anyone can edit!</li>
-            </ul>
-        </div>
-        <div class="col-md-8">
-            <%= form_for @wiki do |f| %>
-                <div class="form-group">
-                    <%= f.label :title %>
-                    <%= f.text_field :title, class: 'form-control', placeholder: "Enter wiki title" %>
-                </div>
-                <div class="form-group">
-                    <%= f.label :body %>
-                    <%= f.text_area :body, rows: 8, class: 'form-control', placeholder: "Enter wiki body" %>
-                </div>
-                <div class="form-group">
-                    <%= f.label :private, class: 'checkbox' do %>
-                        <%= f.check_box :private %> Private wiki
-                    <% end %>
-                </div>
-                <div class="form-group">
-                    <%= render partial: 'collaborators/form', locals: { f: f, collaborators: @wiki.collaborators } %>
-                </div>
-                <div class="form-group">
-                    <%= f.submit "Save", class: 'btn btn-success' %>
-                </div>
-            <% end %>
-        </div>
-    </div>
-<% end %>
--->
-<h1>Create a new Wiki</h1>
-<%= render partial: 'form', locals: { wiki: @wiki } %>

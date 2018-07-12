@@ -9,23 +9,9 @@ class WikisController < ApplicationController
 #
   def show
     @wiki = Wiki.find(params[:id])
-#    authorize @wiki
+    @users = User.find_by(id: params[:id])
+    @collaborators = @wiki.collaborators
   end
-#    
-#    if current_user.present? # setting collaborations
-#      colaborators = []
-#      @wiki.collaborators.each do |collaborator| # if collaborator add to collaborators array
-#        collaborators << collaborator.email
-#      end
-#      unless (@wiki.private == false) || @wiki.user == current_user || collaborators.include(current_user.email) || current_user.admin?
-#        flash[:alert] = "You do not have the proper authorization to view private wikis."
-#        redirect_to new_charge_path
-#      end
-#    else
-#        flash[:alert] = "You must be a collaborator to view that wiki."
-#        redirect_to wikis_path
-#      end
-#  end
 #
   def new
     @wiki = Wiki.new
@@ -52,8 +38,8 @@ class WikisController < ApplicationController
     @wiki = Wiki.find(params[:id])
     @wiki.assign_attributes(wiki_params)
     authorize @wiki
-    if @wiki.save && (@wiki.user == current_user || current_user.admin?)
-#      @wiki.collaborators = Collaborator.update_collaborators(params[:wiki][:collaborators])
+    if @wiki.save && (@wiki.user == current_user || current_user.admin? || current_user.premium? )
+      @wiki.collaborators = Collaborator.update_counters(params[:wiki][:collaborators])
       flash[:notice] = "Your wiki was successfully updated."
       redirect_to @wiki
     else

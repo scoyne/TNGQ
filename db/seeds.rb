@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
-# Create User
+# Create Users
     10.times do
         User.create!(
             email:      Faker::Internet.email,
@@ -16,16 +16,27 @@ require 'faker'
     end
     users = User.all
 
+# Create Wikis
     100.times do
         wiki = Wiki.create!(
             user: users.sample,
-            title:      Faker::NewGirl.character,
-            body:       Faker::NewGirl.quote,
-            private:    false
+            title:          Faker::NewGirl.character,
+            body:           Faker::NewGirl.quote,
+            private:        false
         )
     end
     wikis = Wiki.all
 
+# Create Collaborators
+    50.times do
+        collaborator = Collaborator.create!(
+            user: users.sample,
+            wiki: wikis.sample
+        )
+    end
+    collaborators = Collaborator.all
+
+# Create Test Accounts    
     admin = User.create!(
         email:      'admin@example.com',
         password:   'helloworld',
