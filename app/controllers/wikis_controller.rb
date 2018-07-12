@@ -39,7 +39,6 @@ class WikisController < ApplicationController
     @wiki.assign_attributes(wiki_params)
     authorize @wiki
     if @wiki.save && (@wiki.user == current_user || current_user.admin? || current_user.premium? )
-      @wiki.collaborators = Collaborator.update_counters(params[:wiki][:collaborators])
       flash[:notice] = "Your wiki was successfully updated."
       redirect_to @wiki
     else

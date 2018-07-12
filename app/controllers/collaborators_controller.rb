@@ -6,9 +6,9 @@ class CollaboratorsController < ApplicationController
     end
 #
     def create
-        user = User.find(params[:user_id])
+        @user = User.find_by(email: params[:collaborator][:user])
         @wiki = Wiki.find(params[:wiki_id])
-        collaborator = Collaborator.new(user: user, wiki: @wiki)        
+        collaborator = Collaborator.new(user: @user, wiki: @wiki)        
         if collaborator.save
             flash[:notice] = "Collaborator added successfuly."
         else
@@ -18,9 +18,9 @@ class CollaboratorsController < ApplicationController
     end
 #
     def destroy
-        user = User.find(params[:user_id])
+        @user = User.find(params[:user_id])
         @wiki = Wiki.find(params[:wiki_id])
-        collaborator = Collaborator.find_by(user: user, wiki: wiki)
+        collaborator = Collaborator.find_by(user: @user, wiki: @wiki)
         if @collaborator.destroy
             flash[:notice] = "\"#{collaborator.user.email}\" is no longer collaborating."
         else
