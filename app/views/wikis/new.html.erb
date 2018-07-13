@@ -1,18 +1,3 @@
 <h1>Create a new Wiki</h1>
-<div class="row">
-  <div class="col-md-4">
-    
-    <p>Guidelines for wikis</p>
-    <ul>
-        <li>Blocipedia supports markdown: <strong>**bold**</strong> <em>_italic_</em> <code>`code`</code> >quote &nbsp;  • - bullet list<br/>
-          text links: [link text](link url)<br/></li>
-        <li></li>
-        <li>Markdown is a plain text formatting syntax for writing.</li>
-        <li>Markdown provides seemless conversion of your writing to HTML.</li>
-        <li>Click the cheatsheet if you need formatting assistance.</li>
-    </ul>
-  </div>
-  <div class="col-md-8">
-    <%= render partial: 'form', locals: { wiki: @wiki } %>
-    <%= render partial: 'collaborators/form', locals: { collaborator: @wiki.collaborators } %>
-</div>
+  <%= render partial: 'form', locals: { wiki: @wiki } %>
+  <%= render partial: 'collaborators/form', locals: { collaborator: @wiki.collaborators } %>

@@ -18,11 +18,9 @@ class CollaboratorsController < ApplicationController
     end
 #
     def destroy
-        @user = User.find(params[:user_id])
-        @wiki = Wiki.find(params[:wiki_id])
-        collaborator = Collaborator.find_by(user: @user, wiki: @wiki)
-        if @collaborator.destroy
-            flash[:notice] = "\"#{collaborator.user.email}\" is no longer collaborating."
+        collaborator = Collaborator.find(params[:id])
+        if collaborator.destroy
+            flash[:notice] = "Collaborator has been removed from the Wiki."
         else
             flash[:alert] = "Something went wrong. Collaborator was not deleted."
         end
