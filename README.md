@@ -1,23 +1,42 @@
-# blocipedia
-Build an application that allows users to create public and private Markdown-based wikis.
+# The New Girl Quotes (TNGQ)
 
-Blocipedia is a CRUD application the creates a Wiki collaboration tool that uses Ruby on Rails.
+The New Girl Quotes are a wiki collaboration tool for creating public & private markdown-based wikis for your favorite quotes from the television show The New Girl.
 
-#### The User Story
-   As a user, I want to sign up for a free account by providing a user name, password and email
+## Project Overview
 
-   As a user, I want to sign in and out of Blocipedia
+* Users can sign up for a free account by providing a user name, password and email
+* Users can sign in and out of TNGQ
+* Users with a standard account can create, read, update, and delete public wikis
+* User roles available: admin, standard, or premium
+* A development database is populated (seeded) with users and wikis
+* Users can upgrade their account from a free to a paid plan
+* A premium user can create private wikis
+* A user can edit wikis using Markdown
+* A premium user can add and remove collaborators private wikis
 
-   As a user with a standard account, I want to create, read, update, and delete public wikis
+---
 
-   As a developer, I want to offer three user roles: admin, standard, or premium
+## TNGQ is built using
 
-   As a developer, I want to seed the development database automatically with usrs and wikis
+* Ruby  2.4.1
+* Rails 5.1.2
+* Bootstrap
+* SQLite        - testing
+* PostgreSQL    - production
+* SendGrid      - email confirmation
+* Devise        - user authentication
+* Faker         - seeding new girl quotes
 
-   As a user, I want to upgrade my account from a free to a paid plan
+---
 
-   As a premium user, I want to create private wikis
+## To run TNGQ locally
+1. Clone repository
+2. Run bundle install
+3. Create and migrate database using the command rake db:create then rake db:migrate
+4. Start rails server using the command rails s
+5. Type localhost:3000 in your internet browser
 
-   As a user, I want to edit wikis using Markdown syntax
 
-   As a premium user, I want to add and remove collaborators for my private wikis
+---
+
+Enjoy
