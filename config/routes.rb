@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
-  resources :wikis
   devise_for :users
-  get 'about' => 'welcome/about'
+  resources :wikis
+  resources :charges, only: [:new, :create]
+  resources :users
 
+  match "users/:id/downgrade" => "users#downgrade", :as => "downgrade_user", via: [:get, :post]
+  
+  get 'about' => 'welcome/about'
   root 'welcome#index'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
