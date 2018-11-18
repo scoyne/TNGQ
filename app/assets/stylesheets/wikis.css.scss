@@ -1,0 +1,59 @@
+// Place all the styles related to the Wikis controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+#ng-all-quoters {
+    font-size: 2rem;
+    background-color: rgb(255, 255, 0);
+    text-align:center;
+    
+}
+
+#ng-all-quoters .caption {
+    width: 100%;
+    text-align: center;
+    color: #000;
+    top: 5%;
+    margin-bottom: 5%;
+}
+
+#ng-quoters .caption {
+  position: absolute;
+  left: 0;
+  top: 6%;
+  width: 100%;
+  text-align: center;
+  color: #000;
+}
+
+#ng-quoters {
+  font-size: 2rem;
+  background-color: rgb(18, 193, 236);
+  text-align:center;
+  height: 100%;
+  
+}
+
+.ng-quotes {
+  margin-top: 10%;
+  font-size: 2rem;
+}
+
+#ng-edit-quote {
+  font-size: 2rem;
+  background-color: rgba(62, 248, 62, 0.746);
+  text-align:center;
+}
+
+#ng-edit-quote {
+  font-size: 2rem;
+  padding-top: 5%; 
+}
+
+.ng-edit-guideline {
+  padding-left: 5%;
+  text-align: left;
+}

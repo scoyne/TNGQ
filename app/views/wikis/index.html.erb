@@ -1,12 +1,15 @@
-<h1>All Wikis</h1>
-<% @wiki.each do |wiki| %>
-    
-    <div class="media">
-        <div class="media-body">
-        <h4 class="media-heading">
-            <%= link_to wiki.title, wiki %>
-        </h4>
-        </div>
+<div id="ng-all-quoters">
+    <div class="caption">
+        <span class="border">ALL QUOTES</span>
     </div>
-<% end %>
-
+    
+    <% @wiki.each do |wiki| %>
+        <div class="media">
+            <div class="media-body">
+            <h4 class="media-heading">
+                <%= link_to wiki.title, wiki %>
+            </h4>
+            </div>
+        </div>
+    <% end %>
+</div>

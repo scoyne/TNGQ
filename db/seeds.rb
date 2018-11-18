@@ -19,8 +19,8 @@ require 'faker'
     100.times do
         wiki = Wiki.create!(
             user: users.sample,
-            title:      Faker::NewGirl.character,
-            body:       Faker::NewGirl.quote
+            title:      Faker::TvShows::NewGirl.character,
+            body:       Faker::TvShows::NewGirl.quote
         )
     end
     wikis = Wiki.all

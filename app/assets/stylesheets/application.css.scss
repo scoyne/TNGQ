@@ -15,3 +15,18 @@
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+.navbar-brand-image {
+    width: 10%;
+}
+
+.navbar {
+    margin-bottom:0;
+    background-color: rgb(243, 35, 163);
+    color: #fff;
+    font-size: 2rem;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #fff;
+}
