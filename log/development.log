@@ -26106,3 +26106,11 @@ ActionView::Template::Error (Invalid CSS after "...ound-image: url": expected ";
   
 app/assets/stylesheets/welcome.css.scss:23
 app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__2202692451564920298_70148760677560'
+Started GET "/" for 127.0.0.1 at 2018-11-18 20:44:56 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (94.3ms)
+  [1m[36mUser Load (15.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+Completed 200 OK in 1058ms (Views: 902.9ms | ActiveRecord: 15.9ms)
+
+
