@@ -25992,3 +25992,117 @@ Processing by WelcomeController#index as HTML
 Completed 200 OK in 76ms (Views: 69.3ms | ActiveRecord: 0.9ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-11-18 20:22:21 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (29.3ms)
+Completed 500 Internal Server Error in 5834ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Invalid CSS after "...und-image: url(": expected ")", was "<%= asset_path ..."):
+     5:     <%= csrf_meta_tags %>
+     6: 
+     7:     <meta name="viewport" content="width=device-width, initial-scale=1">
+     8:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:   </head>
+    11: 
+  
+app/assets/stylesheets/welcome.css.scss:23
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__2202692451564920298_70148755668760'
+Started GET "/" for 127.0.0.1 at 2018-11-18 20:22:50 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (8.1ms)
+Completed 500 Internal Server Error in 2558ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Invalid CSS after "...und-image: url(": expected ")", was "<%= image_path ..."):
+     5:     <%= csrf_meta_tags %>
+     6: 
+     7:     <meta name="viewport" content="width=device-width, initial-scale=1">
+     8:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:   </head>
+    11: 
+  
+app/assets/stylesheets/welcome.css.scss:23
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__2202692451564920298_70148747582700'
+Started GET "/" for 127.0.0.1 at 2018-11-18 20:23:01 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 64ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Invalid CSS after "...und-image: url(": expected ")", was "<%= image_path ..."):
+     5:     <%= csrf_meta_tags %>
+     6: 
+     7:     <meta name="viewport" content="width=device-width, initial-scale=1">
+     8:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:   </head>
+    11: 
+  
+app/assets/stylesheets/welcome.css.scss:23
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__2202692451564920298_70148749040300'
+Started GET "/" for 127.0.0.1 at 2018-11-18 20:23:47 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (8.8ms)
+Completed 500 Internal Server Error in 3242ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Invalid CSS after "...und-image: url(": expected ")", was "<%= image_tag '..."):
+     5:     <%= csrf_meta_tags %>
+     6: 
+     7:     <meta name="viewport" content="width=device-width, initial-scale=1">
+     8:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:   </head>
+    11: 
+  
+app/assets/stylesheets/welcome.css.scss:23
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__2202692451564920298_70148717481080'
+Started GET "/" for 127.0.0.1 at 2018-11-18 20:26:50 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (24.4ms)
+Completed 500 Internal Server Error in 9191ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Invalid CSS after "...und-image: url(": expected ")", was "<%= image_tag('..."):
+     5:     <%= csrf_meta_tags %>
+     6: 
+     7:     <meta name="viewport" content="width=device-width, initial-scale=1">
+     8:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:   </head>
+    11: 
+  
+app/assets/stylesheets/welcome.css.scss:23
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__2202692451564920298_70148752985480'
+Started GET "/" for 127.0.0.1 at 2018-11-18 20:28:50 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (18.7ms)
+Completed 500 Internal Server Error in 14720ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Invalid CSS after "...ound-image: url": expected ";", was ":(<%= image_tag..."):
+     5:     <%= csrf_meta_tags %>
+     6: 
+     7:     <meta name="viewport" content="width=device-width, initial-scale=1">
+     8:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:   </head>
+    11: 
+  
+app/assets/stylesheets/welcome.css.scss:23
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__2202692451564920298_70148760677560'
